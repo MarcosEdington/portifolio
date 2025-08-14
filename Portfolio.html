@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Marcos Henrique Edington Santos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0f1f;
+            color: #e0e0e0;
+            position: relative;
+        }
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #00fff7 !important;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: #e0e0e0 !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #00fff7 !important;
+        }
+        /* Hero Section */
+        .hero-section {
+            background: radial-gradient(circle at top left, #00fff7, #0066ff, #000);
+            color: #fff;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0 0 20px #00fff7;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #cceeff;
+        }
+        .btn-tech {
+            background: #00fff7;
+            border: none;
+            color: #000;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-tech:hover {
+            background: #00cccc;
+            box-shadow: 0 0 15px #00fff7;
+        }
+        /* Section Titles */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #00fff7;
+            text-shadow: 0 0 10px rgba(0, 255, 247, 0.5);
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neon-glow {
+            from {
+                text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+            }
+            to {
+                text-shadow: 0 0 20px #00fff7, 0 0 30px #00fff7, 0 0 40px #00fff7;
+            }
+        }
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+        }
+        .card-body h5, .card-body p {
+            color: #ffffff !important;
+        }
+        .skills-list li {
+            background: rgba(0, 255, 255, 0.05);
+            color: #e0e0e0;
+            border-left: 3px solid #00fff7;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skills-list li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00fff7;
+        }
+        /* Project Gallery */
+        .project-gallery img,
+        .project-gallery video {
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+        .project-gallery img:hover,
+        .project-gallery video:hover {
+            transform: scale(1.1);
+        }
+        /* Contact Form */
+        .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .form-control:focus {
+            box-shadow: 0 0 10px #00fff7;
+            border-color: #00fff7;
+        }
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="particles-js"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Marcos Edington</a>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experiência</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="fade-in">Marcos Henrique Edington Santos</h1>
+            <p class="fade-in">Desenvolvedor Full-Stack | Especialista em Soluções Autônomas e Automação</p>
+            <a href="#projects" class="btn btn-tech btn-lg mt-3">Ver Projetos</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <p>Sou um Desenvolvedor com forte experiência em TI, focado em usabilidade, automação e dados. Destaque para projetos pessoais inovadores, como um sistema de mídia indoor para elevadores e um aplicativo Android completo para gestão condominial, implantados no condomínio Vivendas do Rio, em Salvador. Esses projetos demonstram minha habilidade em desenvolver soluções inovadoras e autônomas.</p>
+                    <p>Atualmente, atuo no Grupo Recursos como desenvolvedor de sistemas para gestão de trânsito, utilizando tecnologias como Google Maps APIs, .NET Core, Node.js, PL/SQL, JavaScript e Delphi. Sou graduado em Análise e Desenvolvimento de Sistemas pela UNIFACS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="skills-list list-unstyled">
+                        <li class="p-3 mb-2">.NET Core 9.0</li>
+                        <li class="p-3 mb-2">Delphi</li>
+                        <li class="p-3 mb-2">PL/SQL (Oracle)</li>
+                        <li class="p-3 mb-2">JavaScript & Node.js</li>
+                        <li class="p-3 mb-2">Google Maps APIs</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="skills-list list-unstyled">
+                        <li class="p-3 mb-2">Desenvolvimento de APIs</li>
+                        <li class="p-3 mb-2">Automação de Processos</li>
+                        <li class="p-3 mb-2">Visualização de Dados (Dashboards)</li>
+                        <li class="p-3 mb-2">Programação Android</li>
+                        <li class="p-3 mb-2">Pensamento Crítico & Trabalho em Equipe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Experiência Profissional</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Grupo Recursos (Atual)</h5>
+                            <p class="card-text">Desenvolvedor de sistemas para gestão de trânsito. Criação de dashboards, mapas de calor e monitoramento em tempo real para Transalvador em cidades como Maceió, Camaçari e Salvador.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Softbox (Ricardo Eletro)</h5>
+                            <p class="card-text">Analista de Sistemas (2023-Atual), Desenvolvedor (2021-2022), Analista de Suporte Pleno III (2014-2016). Responsável por scripts em Oracle, correção de falhas em notas fiscais, estoque e PDV.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">ALZ TECNOLOGIA</h5>
+                            <p class="card-text">Analista de Sistemas Jr II (2017). Auxílio em análise, suporte técnico, levantamento de requisitos e testes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            <div class="row">
+                <!-- Projeto VivaCondo -->
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplicativo VivaCondo</h5>
+                            <p class="card-text">Aplicativo Android para gestão condominial. Funcionalidades: Registro de visitantes, liberação de acessos, reserva de espaços (com pagamento via PIX ou boleto), cadastro de anúncios de moradores, registro de pets, assembleias com atas, comunicados, geração de 2ª via de boletos e histórico de pagamentos. Desenvolvido do zero e implantado no condomínio Vivendas do Rio.</p>
+                            <p class="card-text">Manual disponível para mais detalhes sobre login, cadastro via QR Code, menu principal, boas práticas de segurança e FAQ.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto Mídia Indoor -->
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema de Mídia Indoor para Elevadores</h5>
+                            <p class="card-text">Sistema autônomo de mídia indoor rodando dentro de elevadores, com foco em usabilidade e automação. Implantado no condomínio Vivendas do Rio.</p>
+                            <p class="card-text">Espaço para fotos e vídeos do elevador funcionando:</p>
+                            <div class="project-gallery d-flex flex-wrap justify-content-center">
+                                <!-- Placeholders para imagens e vídeos -->
+                                <img src="placeholder-image-elevador1.jpg" alt="Foto do Elevador 1" class="m-2">
+                                <img src="placeholder-image-elevador2.jpg" alt="Foto do Elevador 2" class="m-2">
+                                <video controls class="m-2">
+                                    <source src="placeholder-video-elevador.mp4" type="video/mp4">
+                                    Seu navegador não suporta vídeo.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto Mapa de Calor -->
+                <div class="col-md-6 offset-md-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Mapa de Calor de Infrações - SMTTP Camaçari</h5>
+                            <p class="card-text">Desenvolvimento de um mapa de calor para gestão de trânsito e transporte, que virou produto e gerou contrato. Permite monitoramento em tempo real de ocorrências e estatísticas, otimizando decisões estratégicas. Referência: <a href="https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/" target="_blank" style="color: #00fff7;">Site Oficial</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <p class="text-center">Email: marcos.latino@gmail.com | Telefone: (71) 99330-1262</p>
+            <form class="contact-form">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" placeholder="Seu Nome">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Seu Email">
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="Sua Mensagem"></textarea>
+                </div>
+                <button type="submit" class="btn btn-tech">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2025 Marcos Henrique Edington Santos. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for smooth scrolling -->
+    <script>
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <!-- Particles JS Config -->
+    <script>
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#00fff7"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#00fff7",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
