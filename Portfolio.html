@@ -347,21 +347,21 @@
                     <i class="fab fa-linkedin"></i><span>LinkedIn</span>
                 </a>
             </p>
-            <form class="contact-form">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="name" placeholder="Seu Nome">
-                </div>
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Seu Email">
-                </div>
-                <div class="mb-3">
-                    <label for="message" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="message" rows="5" placeholder="Sua Mensagem"></textarea>
-                </div>
-                <button type="submit" class="btn btn-tech">Enviar</button>
-            </form>
+            <form class="contact-form" action="https://formspree.io/f/xnnzrzgk" method="POST">
+				<div class="mb-3">
+					<label for="name" class="form-label">Nome</label>
+					<input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome" required>
+				</div>
+				<div class="mb-3">
+					<label for="email" class="form-label">Email</label>
+					<input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
+				</div>
+				<div class="mb-3">
+					<label for="message" class="form-label">Mensagem</label>
+					<textarea class="form-control" id="message" name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+				</div>
+				<button type="submit" class="btn btn-tech">Enviar</button>
+			</form>
         </div>
     </section>
 
