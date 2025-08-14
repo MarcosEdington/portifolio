@@ -140,14 +140,25 @@
             border-color: #00fff7;
         }
         /* Contact Icons */
-        .contact-icons a {
+        .contact-icons {
             color: #00fff7;
             margin: 0 10px;
             font-size: 1.5rem;
             transition: color 0.3s;
+            text-decoration: none;
         }
-        .contact-icons a:hover {
+        .contact-icons:hover {
             color: #00cccc;
+        }
+        .contact-icons i {
+            color: #00fff7;
+            margin-right: 5px;
+        }
+        .contact-icons:hover i {
+            color: #00cccc;
+        }
+        .contact-icons span {
+            color: #ffffff;
         }
         /* Footer */
         footer {
@@ -201,9 +212,7 @@
             <div class="row">
                 <div class="col-md-8 offset-md-2">
                     <p>Sou um Desenvolvedor com forte experiência em TI, focado em usabilidade, automação e dados. Destaque para projetos pessoais inovadores, como um sistema de mídia indoor para elevadores e um aplicativo Android completo para gestão condominial, implantados no condomínio Vivendas do Rio, em Salvador. Esses projetos demonstram minha habilidade em desenvolver soluções inovadoras e autônomas.</p>
-                    <p>Atualmente, atuo no Grupo Recursos como desenvolvedor de sistemas para gestão de trânsito, utilizando tecnologias como Google Maps APIs, .NET Core, Node.js, PL/SQL, JavaScript e Delphi. Sou graduado em Análise e Desenvolvimento de Sistemas pela UNIFACS.</p> <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
-                    <i class="fab fa-linkedin"></i> LinkedIn
-                </a>
+                    <p>Atualmente, atuo no Grupo Recursos como desenvolvedor de sistemas para gestão de trânsito, utilizando tecnologias como Google Maps APIs, .NET Core, Node.js, PL/SQL, JavaScript e Delphi. Sou graduado em Análise e Desenvolvimento de Sistemas pela UNIFACS.</p>
                 </div>
             </div>
         </div>
@@ -323,10 +332,10 @@
             <p class="text-center">
                 Email: marcos.latino@gmail.com | 
                 <a href="https://wa.me/5571993301262" target="_blank" class="contact-icons">
-                    <i class="fab fa-whatsapp"></i> WhatsApp
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
                 </a> | 
                 <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
-                    <i class="fab fa-linkedin"></i> LinkedIn
+                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
                 </a>
             </p>
             <form class="contact-form">
