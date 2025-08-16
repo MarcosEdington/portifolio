@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Custom CSS -->
@@ -235,6 +235,199 @@
         .contact-icons span {
             color: #ffffff;
         }
+        /* Modal Styles */
+        .modal-content {
+            background: rgba(10, 15, 31, 0.95);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            color: #e0e0e0;
+        }
+        .modal-header {
+            border-color: rgba(0, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #00fff7;
+            font-size: 1.5rem;
+        }
+        .modal-header .btn-close {
+            background: none;
+            color: #00fff7;
+            font-size: 1.2rem;
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+        }
+        .modal-header .btn-close:hover {
+            color: #00cccc;
+        }
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .modal-body .resume-content {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .modal-body h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .modal-body .contact {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .modal-body .contact a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .modal-body .contact a:hover {
+            text-decoration: underline;
+        }
+        .modal-body h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .modal-body .summary {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .modal-body .education {
+            background-color: #fff;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .modal-body .education .edu-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-body .education .edu-title i {
+            color: #007bff;
+        }
+        .modal-body .education .edu-institution {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .modal-body .education p {
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .modal-body .skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .modal-body .skills li {
+            background-color: #e7f3ff;
+            border: 1px solid #007bff;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            color: #007bff;
+        }
+        .modal-body .experience .job {
+            background-color: #fff;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .modal-body .experience .job-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-body .experience .job-title i {
+            color: #007bff;
+        }
+        .modal-body .experience .job-company {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .modal-body .experience .job-period {
+            font-size: 0.85rem;
+            color: #999;
+            float: right;
+        }
+        .modal-body .experience ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .modal-body .experience li {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+        .modal-body .experience li strong {
+            font-weight: 600;
+        }
+        .modal-footer {
+            border-color: rgba(0, 255, 255, 0.2);
+            justify-content: center;
+        }
+        .modal-footer .btn-download {
+            background: #00fff7;
+            color: #000;
+            font-weight: bold;
+        }
+        .modal-footer .btn-download:hover {
+            background: #00cccc;
+            box-shadow: 0 0 10px #00fff7;
+        }
+        @media (max-width: 767.98px) {
+            .modal-dialog {
+                margin: 10px;
+            }
+            .modal-body {
+                max-height: 60vh;
+            }
+            .modal-body h1 {
+                font-size: 1.8rem;
+            }
+            .modal-body h2 {
+                font-size: 1.2rem;
+            }
+            .modal-body .experience .job, .modal-body .education {
+                padding: 8px;
+            }
+        }
         /* Footer */
         footer {
             background: rgba(0, 0, 0, 0.8);
@@ -297,7 +490,7 @@
                         <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
                             <i class="fab fa-linkedin"></i><span>LinkedIn</span>
                         </a> | 
-                        <a href="assets/curriculomarcosedington.pdf" download class="contact-icons">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons">
                             <i class="fas fa-file-alt"></i><span>Currículo</span>
                         </a>
                     </p>
@@ -305,6 +498,96 @@
             </div>
         </div>
     </section>
+
+    <!-- Resume Modal -->
+    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumeModalLabel">Currículo - Marcos Henrique Edington Santos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="resume-content">
+                        <h1>Marcos Henrique Edington Santos</h1>
+                        <div class="contact">
+                            marcos.latino@gmail.com | (71) 99330-1262 | <a href="https://www.linkedin.com/in/marcosedington/">LinkedIn</a>
+                        </div>
+
+                        <h2>Resumo Profissional</h2>
+                        <p class="summary">
+                            Desenvolvedor full-stack com forte experiência em TI, especializado em usabilidade, automação e análise de dados. Destaque para projetos inovadores, como o desenvolvimento de um sistema de mídia indoor para elevadores e um aplicativo Android completo para gestão condominial, implantados com sucesso no condomínio Vivendas do Rio, em Salvador. Atualmente, contribuo para soluções de gestão de trânsito no Grupo Recursos, utilizando tecnologias como .NET Core, Node.js e Google Maps APIs. Graduado em Análise e Desenvolvimento de Sistemas pela UNIFACS, com foco em criar soluções autônomas e eficientes que otimizam processos e suportam decisões estratégicas.
+                        </p>
+
+                        <h2>Formação Acadêmica</h2>
+                        <div class="education">
+                            <span class="edu-title"><i class="fas fa-graduation-cap"></i> Graduação em Análise e Desenvolvimento de Sistemas</span><br>
+                            <span class="edu-institution">UNIFACS</span>
+                            <p>Curso superior focado em análise, desenvolvimento e manutenção de sistemas, com ênfase em tecnologias modernas e práticas de programação.</p>
+                        </div>
+
+                        <h2>Experiência Profissional</h2>
+                        <div class="experience">
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Desenvolvedor de Sistemas</span> <span class="job-period">Atual (desde 2023)</span><br>
+                                <span class="job-company">Grupo Recursos</span>
+                                <ul>
+                                    <li><strong>Desenvolvimento de dashboards e mapas de calor</strong> para monitoramento em tempo real de trânsito na Transalvador (Maceió, Camaçari, Salvador).</li>
+                                    <li><strong>Criação de APIs próprias</strong> e integração com Google Maps APIs para otimização de processos e suporte a decisões estratégicas.</li>
+                                    <li>Implementação de sistemas que processam <strong>milhões de transações diárias</strong>, melhorando a eficiência da gestão urbana.</li>
+                                </ul>
+                            </div>
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Desenvolvedor</span> <span class="job-period">2021 – 2022</span><br>
+                                <span class="job-company">Softbox (Ricardo Eletro)</span>
+                                <ul>
+                                    <li><strong>Desenvolvimento de scripts PL/SQL</strong> para correção de falhas em notas fiscais, estoque e PDV.</li>
+                                    <li><strong>Automação de processos de suporte</strong>, reduzindo o tempo de resolução de incidentes em operações de varejo.</li>
+                                    <li>Criação de <strong>relatórios financeiros</strong> que aumentaram a retenção de clientes através de insights comportamentais.</li>
+                                </ul>
+                            </div>
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Analista de Suporte Pleno III</span> <span class="job-period">2014 – 2016</span><br>
+                                <span class="job-company">Softbox (Ricardo Eletro)</span>
+                                <ul>
+                                    <li><strong>Gerenciamento de incidentes críticos</strong> durante fusão empresarial, garantindo continuidade operacional.</li>
+                                    <li>Implementação de <strong>ferramentas de otimização</strong> para estoque e processos de venda.</li>
+                                </ul>
+                            </div>
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Analista de Sistemas Jr II</span> <span class="job-period">2017</span><br>
+                                <span class="job-company">ALZ TECNOLOGIA</span>
+                                <ul>
+                                    <li><strong>Análise técnica e suporte</strong> em projetos, com foco em levantamento de requisitos e testes.</li>
+                                    <li>Contribuição para <strong>documentação e integração</strong> de sistemas, garantindo qualidade e eficiência.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Habilidades</h2>
+                        <div class="skills">
+                            <ul>
+                                <li>.NET Core 9.0</li>
+                                <li>Delphi</li>
+                                <li>PL/SQL (Oracle)</li>
+                                <li>JavaScript & Node.js</li>
+                                <li>Google Maps APIs</li>
+                                <li>Desenvolvimento de APIs</li>
+                                <li>Automação de Processos</li>
+                                <li>Visualização de Dados (Dashboards)</li>
+                                <li>Programação Android</li>
+                                <li>Pensamento Crítico</li>
+                                <li>Trabalho em Equipe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="assets/curriculomarcosedington.pdf" download class="btn btn-download">Baixar PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Skills Section -->
     <section id="skills" class="py-5">
