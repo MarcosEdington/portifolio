@@ -157,7 +157,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            height: 100%; /* Ensure card takes full height of parent */
+            height: 100%;
         }
         .ebook-card .card {
             padding: 10px;
@@ -181,7 +181,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 150px; /* Ensure consistent height for card body */
+            min-height: 150px;
         }
         .ebook-card h5 {
             font-size: 1.1rem;
@@ -194,14 +194,14 @@
         }
         .ebook-card a.btn {
             font-size: 0.9rem;
-            align-self: center; /* Center button horizontally */
+            align-self: center;
         }
         @media (max-width: 767.98px) {
             .ebook-card img {
                 aspect-ratio: 2 / 3;
             }
             .ebook-card .card-body {
-                min-height: 180px; /* Slightly taller for mobile to accommodate text */
+                min-height: 180px;
             }
         }
         /* Contact Form */
@@ -296,6 +296,9 @@
                     <p class="text-center mt-4">
                         <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
                             <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                        </a> | 
+                        <a href="assets/curriculomarcosedington.doc" download class="contact-icons">
+                            <i class="fas fa-file-alt"></i><span>Currículo</span>
                         </a>
                     </p>
                 </div>
