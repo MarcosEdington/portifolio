@@ -122,6 +122,7 @@
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Ensure image doesn't overflow card */
         }
         .card:hover {
             transform: translateY(-10px);
@@ -152,10 +153,13 @@
             transform: scale(1.1);
         }
         /* E-book Gallery */
+        .ebook-card .card {
+            padding: 10px; /* Add padding inside card for better image fit */
+        }
         .ebook-card img {
             width: 100%;
-            height: 450px;
-            object-fit: cover;
+            aspect-ratio: 2 / 3; /* Standard book cover ratio for proportional scaling */
+            object-fit: contain; /* Use contain to show full image without cropping */
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
             transition: transform 0.3s;
@@ -178,6 +182,11 @@
         }
         .ebook-card a.btn {
             font-size: 0.9rem;
+        }
+        @media (max-width: 767.98px) {
+            .ebook-card img {
+                aspect-ratio: 2 / 3; /* Maintain ratio on mobile */
+            }
         }
         /* Contact Form */
         .form-control {
@@ -397,7 +406,7 @@
             </div>
             <div class="row ebook-gallery">
                 <!-- E-book 2 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook2_free.pdf" download>
                             <div class="card">
@@ -412,7 +421,7 @@
                     </div>
                 </div>
                 <!-- E-book 1 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook1_free.pdf" download>
                             <div class="card">
@@ -427,7 +436,7 @@
                     </div>
                 </div>
                 <!-- E-book 3 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook3_free.pdf" target="_blank">
                             <div class="card">
@@ -442,7 +451,7 @@
                     </div>
                 </div>
                 <!-- E-book 4 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook4_free.pdf" download>
                             <div class="card">
@@ -508,12 +517,10 @@
     <!-- Custom JS for smooth scrolling, form feedback, and preloader -->
     <script>
         // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.getElementById('preloader');
-            setTimeout(() => {
-                preloader.classList.add('hidden');
-            }, 4000);
-        });
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 4000);
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('a.nav-link').forEach(anchor => {
