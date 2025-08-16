@@ -122,7 +122,7 @@
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            overflow: hidden; /* Ensure image doesn't overflow card */
+            overflow: hidden;
         }
         .card:hover {
             transform: translateY(-10px);
@@ -153,13 +153,19 @@
             transform: scale(1.1);
         }
         /* E-book Gallery */
+        .ebook-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%; /* Ensure card takes full height of parent */
+        }
         .ebook-card .card {
-            padding: 10px; /* Add padding inside card for better image fit */
+            padding: 10px;
         }
         .ebook-card img {
             width: 100%;
-            aspect-ratio: 2 / 3; /* Standard book cover ratio for proportional scaling */
-            object-fit: contain; /* Use contain to show full image without cropping */
+            aspect-ratio: 2 / 3;
+            object-fit: contain;
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
             transition: transform 0.3s;
@@ -171,6 +177,11 @@
             background: transparent;
             padding: 10px 0 0 0;
             text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 150px; /* Ensure consistent height for card body */
         }
         .ebook-card h5 {
             font-size: 1.1rem;
@@ -179,13 +190,18 @@
         .ebook-card p {
             font-size: 0.9rem;
             margin-bottom: 10px;
+            flex-grow: 1;
         }
         .ebook-card a.btn {
             font-size: 0.9rem;
+            align-self: center; /* Center button horizontally */
         }
         @media (max-width: 767.98px) {
             .ebook-card img {
-                aspect-ratio: 2 / 3; /* Maintain ratio on mobile */
+                aspect-ratio: 2 / 3;
+            }
+            .ebook-card .card-body {
+                min-height: 180px; /* Slightly taller for mobile to accommodate text */
             }
         }
         /* Contact Form */
