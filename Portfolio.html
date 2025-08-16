@@ -88,140 +88,6 @@
             color: #cceeff;
         }
         .btn-tech {
-            background: #_PHYSICAL_ADDRESS_0;
-            border: none;
-            color: #000;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .btn-tech:hover {
-            background: #00cccc;
-            box-shadow: 0 0 15px #00fff7;
-        }
-        /* Section Titles */
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #00fff7;
-            text-shadow: 0 0 10px rgba(0, 255, 247, 0.5);
-            animation: neon-glow 1.5s ease-in-out infinite alternate;
-        }
-        @keyframes neon-glow {
-            from {
-                text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
-            }
-            to {
-                text-shadow: 0 0 20px #00fff7, 0 0 30px #00fff7, 0 0 40px #00fff7;
-            }
-        }
-        /* Cards */
-        .card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(0, 255, 255, 0.2);
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
-        }
-        .card-body h5, .card-body p
-
-System: It looks like the previous response was cut off. Below is the complete HTML code with the correct E-books section from the original HTML you provided, the preloader with a dark blue background (#0a0f1f) and "Carregando..." text, and the preloader duration set to 7 seconds. The artifact_id remains the same as it is an update to the previous artifact.
-
-<xaiArtifact artifact_id="4dce4992-9757-4081-a1df-9bbf9d0ff40f" artifact_version_id="b3d3406f-0a25-4877-84c3-bf6c47f27a0d" title="index.html" contentType="text/html">
-<!DOCTYPE html>
-<html lang="pt-BR"> 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Marcos Henrique Edington Santos</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #0a0f1f url('assets/background1.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #e0e0e0;
-            position: relative;
-            margin: 0;
-        }
-        /* Preloader */
-        #preloader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #0a0f1f;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-        #preloader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-        .preloader-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
-            color: #00fff7;
-            text-shadow: 0 0 10px #00fff7;
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-        /* Navbar */
-        .navbar {
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
-        }
-        .navbar-brand {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.5rem;
-            color: #00fff7 !important;
-            letter-spacing: 1px;
-        }
-        .nav-link {
-            color: #e0e0e0 !important;
-            transition: color 0.3s;
-        }
-        .nav-link:hover {
-            color: #00fff7 !important;
-        }
-        /* Hero Section */
-        .hero-section {
-            background: radial-gradient(circle at top left, rgba(0, 255, 247, 0.5), rgba(0, 102, 255, 0.5), rgba(0, 0, 0, 0.7));
-            color: #fff;
-            padding: 120px 0;
-            text-align: center;
-            position: relative;
-        }
-        .hero-section h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            text-shadow: 0 0 20px #00fff7;
-        }
-        .hero-section p {
-            font-size: 1.2rem;
-            color: #cceeff;
-        }
-        .btn-tech {
             background: #00fff7;
             border: none;
             color: #000;
@@ -286,16 +152,32 @@ System: It looks like the previous response was cut off. Below is the complete H
             transform: scale(1.1);
         }
         /* E-book Gallery */
-        .ebook-gallery img {
+        .ebook-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
             transition: transform 0.3s;
-            width: 150px;
-            height: 200px;
-            object-fit: cover;
         }
-        .ebook-gallery img:hover {
+        .ebook-card:hover img {
             transform: scale(1.1);
+        }
+        .ebook-card .card-body {
+            background: transparent;
+            padding: 10px 0 0 0;
+            text-align: center;
+        }
+        .ebook-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .ebook-card p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        .ebook-card a.btn {
+            font-size: 0.9rem;
         }
         /* Contact Form */
         .form-control {
@@ -466,7 +348,7 @@ System: It looks like the previous response was cut off. Below is the complete H
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title">Aplicativo VivaCondo</h5>
-                            <p class="card-text">Aplicativo Android para gestão condominial. Funcionalidades: Registro de visitantes, liberação de acessos, reserva de espaços (com pagamento via PIX ou boleto), cadastro de anúncios de moradores, registro de pets, assembleias com atas, comunciados, geração de 2ª via de boletos e histórico de pagamentos. Desenvolvido do zero e implantado no condomínio Vivendas do Rio.</p>
+                            <p class="card-text">Aplicativo Android para gestão condominial. Funcionalidades: Registro de visitantes, liberação de acessos, reserva de espaços (com pagamento via PIX ou boleto), cadastro de anúncios de moradores, registro de pets, assembleias com atas, comunicados, geração de 2ª via de boletos e histórico de pagamentos. Desenvolvido do zero e implantado no condomínio Vivendas do Rio.</p>
                             <p class="card-text">
                                 <a href="assets/VivaCondo_Manual.pdf" target="_blank" class="btn btn-tech">Ver Manual</a>
                             </p>
@@ -481,7 +363,6 @@ System: It looks like the previous response was cut off. Below is the complete H
                             <p class="card-text">Sistema autônomo de mídia indoor rodando dentro de elevadores, com foco em usabilidade e automação. Implantado no condomínio Vivendas do Rio.</p>
                             <p class="card-text">Espaço para fotos e vídeos do elevador funcionando:</p>
                             <div class="project-gallery d-flex flex-wrap justify-content-center">
-                                <!-- Placeholders para imagens e vídeos -->
                                 <img src="placeholder-image-elevador1.jpg" alt="Foto do Elevador 1" class="m-2">
                                 <img src="placeholder-image-elevador2.jpg" alt="Foto do Elevador 2" class="m-2">
                                 <video controls class="m-2">
@@ -517,49 +398,61 @@ System: It looks like the previous response was cut off. Below is the complete H
             <div class="row ebook-gallery">
                 <!-- E-book 2 -->
                 <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <a href="assets/ebook2_free.pdf" download>
-                                <img src="assets/ebook2-cover2.jpg" alt="Capa do E-book 2" class="m-2">
-                            </a>
+                    <div class="ebook-card">
+                        <a href="assets/ebook2_free.pdf" download>
+                            <div class="card">
+                                <img src="assets/ebook2-cover2.jpg" alt="Capa do E-book 2">
+                            </div>
+                        </a>
+                        <div class="card-body">
                             <h5 class="card-title">Introdução à Automação (Gratuito)</h5>
                             <p class="card-text">Explora os fundamentos da automação, incluindo ferramentas e técnicas para otimizar processos.</p>
+                            <a href="assets/ebook2_free.pdf" download class="btn btn-tech">Baixar</a>
                         </div>
                     </div>
                 </div>
                 <!-- E-book 1 -->
                 <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <a href="assets/ebook1_free.pdf" download>
-                                <img src="assets/ebook1-cover.png" alt="Capa do E-book 1" class="m-2">
-                            </a>
+                    <div class="ebook-card">
+                        <a href="assets/ebook1_free.pdf" download>
+                            <div class="card">
+                                <img src="assets/ebook1-cover.png" alt="Capa do E-book 1">
+                            </div>
+                        </a>
+                        <div class="card-body">
                             <h5 class="card-title">Primeiros Passos na Programação (Gratuito)</h5>
                             <p class="card-text">Um guia introdutório para iniciantes em programação, cobrindo conceitos básicos e primeiros passos em linguagens populares.</p>
+                            <a href="assets/ebook1_free.pdf" download class="btn btn-tech">Baixar</a>
                         </div>
                     </div>
                 </div>
                 <!-- E-book 3 -->
                 <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <a href="assets/ebook3_free.pdf" target="_blank">
-                                <img src="assets/ebook3-cover.png" alt="Capa do E-book 3" class="m-2">
-                                <h5 class="card-title">Desenvolvimento Full-Stack Avançado (Pago)</h5>
-                                <p class="card-text">Um guia avançado para desenvolvimento full-stack, cobrindo front-end, back-end e integração de APIs.</p>
-                            </a>
+                    <div class="ebook-card">
+                        <a href="assets/ebook3_free.pdf" target="_blank">
+                            <div class="card">
+                                <img src="assets/ebook3-cover.png" alt="Capa do E-book 3">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Desenvolvimento Full-Stack Avançado (Pago)</h5>
+                            <p class="card-text">Um guia avançado para desenvolvimento full-stack, cobrindo front-end, back-end e integração de APIs.</p>
+                            <a href="assets/ebook3_free.pdf" target="_blank" class="btn btn-tech">Adquirir</a>
                         </div>
                     </div>
                 </div>
                 <!-- E-book 4 -->
                 <div class="col-md-3 mb-4">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <a href="assets/ebook4_free.pdf" download>
-                                <img src="placeholder-ebook4-cover.jpg" alt="Capa do E-book 4" class="m-2">
-                                <h5 class="card-title">Fundamentos de APIs (Gratuito)</h5>
-                                <p class="card-text">Introdução ao desenvolvimento e uso de APIs, com exemplos práticos e melhores práticas.</p>
-                            </a>
+                    <div class="ebook-card">
+                        <a href="assets/ebook4_free.pdf" download>
+                            <div class="card">
+                                <img src="placeholder-ebook4-cover.jpg" alt="Capa do E-book 4">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Fundamentos de APIs (Gratuito)</h5>
+                            <p class="card-text">Introdução ao desenvolvimento e uso de APIs, com exemplos práticos e melhores práticas.</p>
+                            <a href="assets/ebook4_free.pdf" download class="btn btn-tech">Baixar</a>
                         </div>
                     </div>
                 </div>
@@ -619,7 +512,7 @@ System: It looks like the previous response was cut off. Below is the complete H
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.classList.add('hidden');
-            }, 8000);
+            }, 7000);
         });
 
         // Smooth scrolling for navigation links
