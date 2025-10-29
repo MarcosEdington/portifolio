@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="pt-BR"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Marcos Henrique Edington Santos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #0a0f1f url('assets/background1.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            position: relative;
+            margin: 0;
+        }
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0a0f1f;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .preloader-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            color: #00fff7;
+            text-shadow: 0 0 10px #00fff7;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: #00fff7 !important;
+            letter-spacing: 1px;
+        }
+        .nav-link {
+            color: #e0e0e0 !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #00fff7 !important;
+        }
+        /* Hero Section */
+        .hero-section {
+            background: radial-gradient(circle at top left, rgba(0, 255, 247, 0.5), rgba(0, 102, 255, 0.5), rgba(0, 0, 0, 0.7));
+            color: #fff;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        .hero-section h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0 0 20px #00fff7;
+        }
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #cceeff;
+        }
+        .btn-tech {
+            background: #00fff7;
+            border: none;
+            color: #000;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .btn-tech:hover {
+            background: #00cccc;
+            box-shadow: 0 0 15px #00fff7;
+        }
+        /* Section Titles */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #00fff7;
+            text-shadow: 0 0 10px rgba(0, 255, 247, 0.5);
+            animation: neon-glow 1.5s ease-in-out infinite alternate;
+        }
+        @keyframes neon-glow {
+            from {
+                text-shadow: 0 0 10px #00fff7, 0 0 20px #00fff7, 0 0 30px #00fff7;
+            }
+            to {
+                text-shadow: 0 0 20px #00fff7, 0 0 30px #00fff7, 0 0 40px #00fff7;
+            }
+        }
+        /* Cards */
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+        }
+        .card-body h5, .card-body p {
+            color: #ffffff !important;
+        }
+        .skills-list li {
+            background: rgba(0, 255, 255, 0.05);
+            color: #e0e0e0;
+            border-left: 3px solid #00fff7;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skills-list li:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #00fff7;
+        }
+        /* Project Gallery */
+        .project-gallery img,
+        .project-gallery video {
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s;
+            max-width: 200px;
+            max-height: 200px;
+        }
+        .project-gallery img:hover,
+        .project-gallery video:hover {
+            transform: scale(1.1);
+        }
+        /* E-book Gallery */
+        .ebook-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .ebook-card .card {
+            padding: 10px;
+        }
+        .ebook-card img {
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            object-fit: contain;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+        .ebook-card:hover img {
+            transform: scale(1.1);
+        }
+        .ebook-card .card-body {
+            background: transparent;
+            padding: 10px 0 0 0;
+            text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 150px;
+        }
+        .ebook-card h5 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .ebook-card p {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            flex-grow: 1;
+        }
+        .ebook-card a.btn {
+            font-size: 0.9rem;
+            align-self: center;
+        }
+        @media (max-width: 767.98px) {
+            .ebook-card img {
+                aspect-ratio: 2 / 3;
+            }
+            .ebook-card .card-body {
+                min-height: 180px;
+            }
+        }
+        /* Contact Form */
+        .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            color: #e0e0e0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        .form-control:focus {
+            box-shadow: 0 0 10px #00fff7;
+            border-color: #00fff7;
+        }
+        /* Contact Icons */
+        .contact-icons {
+            color: #00fff7;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        .contact-icons:hover {
+            color: #00cccc;
+        }
+        .contact-icons i {
+            color: #00fff7;
+            margin-right: 5px;
+        }
+        .contact-icons:hover i {
+            color: #00cccc;
+        }
+        .contact-icons span {
+            color: #ffffff;
+        }
+        /* Modal Styles */
+        .modal-content {
+            background: rgba(10, 15, 31, 0.95);
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+            color: #e0e0e0;
+        }
+        .modal-header {
+            border-color: rgba(0, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .modal-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #00fff7;
+            font-size: 1.5rem;
+        }
+        .modal-header .btn-close {
+            background: none;
+            color: #00fff7;
+            font-size: 1.2rem;
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+        }
+        .modal-header .btn-close:hover {
+            color: #00cccc;
+        }
+        .modal-body {
+            max-height: 70vh;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .modal-body .resume-content {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .modal-body h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .modal-body .contact {
+            text-align: center;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .modal-body .contact a {
+            color: #007bff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .modal-body .contact a:hover {
+            text-decoration: underline;
+        }
+        .modal-body h2 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        .modal-body .summary {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        .modal-body .education {
+            background-color: #fff;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .modal-body .education .edu-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-body .education .edu-title i {
+            color: #007bff;
+        }
+        .modal-body .education .edu-institution {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .modal-body .education p {
+            font-size: 0.9rem;
+            margin-top: 8px;
+        }
+        .modal-body .skills ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .modal-body .skills li {
+            background-color: #e7f3ff;
+            border: 1px solid #007bff;
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            color: #007bff;
+        }
+        .modal-body .experience .job {
+            background-color: #fff;
+            border-left: 4px solid #007bff;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .modal-body .experience .job-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .modal-body .experience .job-title i {
+            color: #007bff;
+        }
+        .modal-body .experience .job-company {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .modal-body .experience .job-period {
+            font-size: 0.85rem;
+            color: #999;
+            float: right;
+        }
+        .modal-body .experience ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        .modal-body .experience li {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+        .modal-body .experience li strong {
+            font-weight: 600;
+        }
+        .modal-footer {
+            border-color: rgba(0, 255, 255, 0.2);
+            justify-content: center;
+        }
+        .modal-footer .btn-download {
+            background: #00fff7;
+            color: #000;
+            font-weight: bold;
+        }
+        .modal-footer .btn-download:hover {
+            background: #00cccc;
+            box-shadow: 0 0 10px #00fff7;
+        }
+        @media (max-width: 767.98px) {
+            .modal-dialog {
+                margin: 10px;
+            }
+            .modal-body {
+                max-height: 60vh;
+            }
+            .modal-body h1 {
+                font-size: 1.8rem;
+            }
+            .modal-body h2 {
+                font-size: 1.2rem;
+            }
+            .modal-body .experience .job, .modal-body .education {
+                padding: 8px;
+            }
+        }
+        /* Footer */
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="preloader-text">Carregando...</div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Marcos Edington</a>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Mim</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experiência</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ebooks">E-books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <h1 class="fade-in">Marcos Henrique Edington Santos</h1>
+            <p class="fade-in">Desenvolvedor Full-Stack | Especialista em Soluções Tecnológicas</p>
+            <a href="#projects" class="btn btn-tech btn-lg mt-3">Ver Projetos</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Sobre Mim</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <p>Sou um Desenvolvedor com forte experiência em TI, focado em usabilidade, automação e dados. Destaque para projetos pessoais inovadores, como um sistema de mídia indoor para elevadores e um aplicativo Android completo para gestão condominial, implantados no condomínio Vivendas do Rio, em Salvador. Esses projetos demonstram minha habilidade em desenvolver soluções inovadoras e autônomas.</p>
+                    <p>Atualmente, atuo no Grupo Recursos como desenvolvedor de sistemas para gestão de trânsito, utilizando tecnologias como Google Maps APIs, .NET Core, Node.js, PL/SQL, JavaScript e Delphi. Sou graduado em Análise e Desenvolvimento de Sistemas pela UNIFACS.</p>
+                    <p class="text-center mt-4">
+                        <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
+                            <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                        </a> | 
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons">
+                            <i class="fas fa-file-alt"></i><span>Currículo</span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Modal -->
+    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumeModalLabel">Currículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="resume-content">
+                        <h1>Marcos Henrique Edington Santos</h1>
+                        <div class="contact">
+                            marcos.latino@gmail.com | (71) 99330-1262 | <a href="https://www.linkedin.com/in/marcosedington/">LinkedIn</a>
+                        </div>
+
+                        <h2>Resumo Profissional</h2>
+                        <p class="summary">
+                            Desenvolvedor full-stack com forte experiência em TI, especializado em usabilidade, automação e análise de dados. Destaque para projetos inovadores, como o desenvolvimento de um sistema de mídia indoor para elevadores e um aplicativo Android completo para gestão condominial, implantados com sucesso no condomínio Vivendas do Rio, em Salvador. Atualmente, contribuo para soluções de gestão de trânsito no Grupo Recursos, utilizando tecnologias como .NET Core, Node.js e Google Maps APIs. Graduado em Análise e Desenvolvimento de Sistemas pela UNIFACS, com foco em criar soluções autônomas e eficientes que otimizam processos e suportam decisões estratégicas.
+                        </p>
+
+                        <h2>Formação Acadêmica</h2>
+                        <div class="education">
+                            <span class="edu-title"><i class="fas fa-graduation-cap"></i> Graduação em Análise e Desenvolvimento de Sistemas</span><br>
+                            <span class="edu-institution">UNIFACS</span>
+                            <p>Curso superior focado em análise, desenvolvimento e manutenção de sistemas, com ênfase em tecnologias modernas e práticas de programação.</p>
+                        </div>
+
+                        <h2>Experiência Profissional</h2>
+                        <div class="experience">
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Desenvolvedor de Sistemas</span> <span class="job-period">Atual (desde 2023)</span><br>
+                                <span class="job-company">Grupo Recursos</span>
+                                <ul>
+                                    <li><strong>Desenvolvimento de dashboards e mapas de calor</strong> para monitoramento em tempo real de trânsito na Transalvador (Maceió, Camaçari, Salvador).</li>
+                                    <li><strong>Criação de APIs próprias</strong> e integração com Google Maps APIs para otimização de processos e suporte a decisões estratégicas.</li>
+                                    <li>Implementação de sistemas que processam <strong>milhões de transações diárias</strong>, melhorando a eficiência da gestão urbana.</li>
+                                </ul>
+                            </div>
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Desenvolvedor</span> <span class="job-period">2021 – 2022</span><br>
+                                <span class="job-company">Softbox (Ricardo Eletro)</span>
+                                <ul>
+                                    <li><strong>Desenvolvimento de scripts PL/SQL</strong> para correção de falhas em notas fiscais, estoque e PDV.</li>
+                                    <li><strong>Automação de processos de suporte</strong>, reduzindo o tempo de resolução de incidentes em operações de varejo.</li>
+                                    <li>Criação de <strong>relatórios financeiros</strong> que aumentaram a retenção de clientes através de insights comportamentais.</li>
+                                </ul>
+                            </div>
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Analista de Suporte Pleno III</span> <span class="job-period">2014 – 2016</span><br>
+                                <span class="job-company">Softbox (Ricardo Eletro)</span>
+                                <ul>
+                                    <li><strong>Gerenciamento de incidentes críticos</strong> durante fusão empresarial, garantindo continuidade operacional.</li>
+                                    <li>Implementação de <strong>ferramentas de otimização</strong> para estoque e processos de venda.</li>
+                                </ul>
+                            </div>
+                            <div class="job">
+                                <span class="job-title"><i class="fas fa-briefcase"></i> Analista de Sistemas Jr II</span> <span class="job-period">2017</span><br>
+                                <span class="job-company">ALZ TECNOLOGIA</span>
+                                <ul>
+                                    <li><strong>Análise técnica e suporte</strong> em projetos, com foco em levantamento de requisitos e testes.</li>
+                                    <li>Contribuição para <strong>documentação e integração</strong> de sistemas, garantindo qualidade e eficiência.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <h2>Habilidades</h2>
+                        <div class="skills">
+                            <ul>
+                                <li>.NET Core 9.0</li>
+                                <li>Delphi</li>
+                                <li>PL/SQL (Oracle)</li>
+                                <li>JavaScript & Node.js</li>
+                                <li>Google Maps APIs</li>
+                                <li>Desenvolvimento de APIs</li>
+                                <li>Automação de Processos</li>
+                                <li>Visualização de Dados (Dashboards)</li>
+                                <li>Programação Android</li>
+                                <li>Pensamento Crítico</li>
+                                <li>Trabalho em Equipe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="assets/curriculomarcosedington.pdf" download class="btn btn-download">Baixar PDF</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="skills-list list-unstyled">
+                        <li class="p-3 mb-2">.NET Core 9.0</li>
+                        <li class="p-3 mb-2">Delphi</li>
+                        <li class="p-3 mb-2">PL/SQL (Oracle)</li>
+                        <li class="p-3 mb-2">JavaScript & Node.js</li>
+                        <li class="p-3 mb-2">Google Maps APIs</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="skills-list list-unstyled">
+                        <li class="p-3 mb-2">Desenvolvimento de APIs</li>
+                        <li class="p-3 mb-2">Automação de Processos</li>
+                        <li class="p-3 mb-2">Visualização de Dados (Dashboards)</li>
+                        <li class="p-3 mb-2">Programação Android</li>
+                        <li class="p-3 mb-2">Pensamento Crítico & Trabalho em Equipe</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Experiência Profissional</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Grupo Recursos (Emprego Atual)</h5>
+                            <p class="card-text">Desenvolvedor de sistemas para gestão de trânsito. Criação de dashboards, mapas de calor e monitoramento em tempo real para Transalvador em cidades como Maceió, Camaçari e Salvador.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Softbox (Ricardo Eletro)</h5>
+                            <p class="card-text">Desenvolvedor (2021-2022), Analista de Suporte Pleno III (2014-2016). Responsável por scripts em Oracle, correção de falhas em notas fiscais, estoque e PDV.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">ALZ TECNOLOGIA</h5>
+                            <p class="card-text">Analista de Sistemas Jr II (2017). Auxílio em análise, suporte técnico, levantamento de requisitos e testes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Projetos</h2>
+            <div class="row">
+                <!-- Projeto VivaCondo -->
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Aplicativo VivaCondo</h5>
+                            <p class="card-text">Desenvolvido do zero, o VivaCondo é um aplicativo Android para gestão condominial, projetado para simplificar e modernizar a administração de condomínios. Implantado com sucesso no condomínio Vivendas do Rio, o aplicativo oferece uma experiência intuitiva e funcionalidades robustas, incluindo:<br>
+                            - <strong>Gestão de Visitantes</strong>: Registro e controle de entrada de visitantes.<br>
+                            - <strong>Liberação de Acessos</strong>: Autorização segura e prática para moradores e visitantes.<br>
+                            - <strong>Reserva de Espaços</strong>: Agendamento de áreas comuns com opções de pagamento via PIX ou boleto.<br>
+                            - <strong>Anúncios de Moradores</strong>: Cadastro e divulgação de comunicados internos.<br>
+                            - <strong>Registro de Pets</strong>: Gerenciamento de informações sobre animais de estimação.<br>
+                            - <strong>Assembleias e Atas</strong>: Organização de reuniões com registro de atas digitais.<br>
+                            - <strong>Comunicados</strong>: Envio de notificações rápidas e centralizadas.<br>
+                            - <strong>Financeiro</strong>: Geração de segunda via de boletos e consulta ao histórico de pagamentos.<br>
+                            O VivaCondo foi projetado para otimizar processos, promover transparência e facilitar a interação entre síndicos, moradores e administradores, garantindo uma gestão eficiente e moderna.</p>
+                            <p class="card-text">
+                                <!-- <a href="assets/VivaCondo_Manual.pdf" target="_blank" class="btn btn-tech">Ver Manual</a> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto Mídia Indoor -->
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Sistema de Mídia Indoor para Elevadores</h5>
+                            <p class="card-text">Implantado no condomínio Vivendas do Rio, o sistema de mídia indoor para elevadores oferece uma plataforma dinâmica e interativa, projetada para engajar moradores com conteúdos variados. A solução exibe anúncios de moradores, propagandas externas, comunicados da administração, avisos importantes, resultados de loterias (como Mega-Sena e Quina) e novidades sobre lançamentos de filmes e plataformas de streaming. Com uma interface otimizada para o ambiente compacto de elevadores, o sistema garante usabilidade e impacto visual, promovendo comunicação eficiente e entretenimento para os usuários.</p>
+                            <div class="project-gallery d-flex flex-wrap justify-content-center">
+                                <img src="assets/placeholder-image-elevador1.jpg" alt="Foto do Elevador 1" class="m-2">
+                                <img src="assets/placeholder-image-elevador2.jpg" alt="Foto do Elevador 2" class="m-2">
+                                <video autoplay muted controls class="m-2">
+                                    <source src="assets/placeholder-video-elevador.mp4" type="video/mp4">
+                                    Seu navegador não suporta vídeo.
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Projeto Mapa de Calor -->
+                <div class="col-md-6 offset-md-3">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Mapa de Calor de Infrações - SMTTP Camaçari</h5>
+                            <p class="card-text">Desenvolvimento de um mapa de calor para gestão de trânsito e transporte, que virou produto e gerou contrato. Permite monitoramento em tempo real de ocorrências e estatísticas, otimizando decisões estratégicas. Referência: <a href="https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/" target="_blank" style="color: #00fff7;">Site Oficial</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-books Section -->
+    <section id="ebooks" class="py-5">
+        <div class="container">
+            <h2 class="section-title">E-books</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2 text-center">
+                    <p>Confira meus e-books de autoria própria! Disponibilizo alguns exemplares gratuitamente e outros pagos, abordando temas como introdução à programação, tecnologia, automação e desenvolvimento de software. Clique nas capas abaixo para fazer o download ou adquirir.</p>
+                </div>
+            </div>
+            <div class="row ebook-gallery justify-content-center">
+                <!-- E-book 2 -->
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="ebook-card">
+                        <a href="assets/ebook2_free.pdf" download>
+                            <div class="card">
+                                <img src="assets/ebook2-cover2.jpg" alt="Capa do E-book 2">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Introdução à Automação (Gratuito)</h5>
+                            <p class="card-text">Explora os fundamentos da automação, incluindo ferramentas e técnicas para otimizar processos.</p>
+                            <a href="" download class="btn btn-tech">Indisponível</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- E-book 1 -->
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="ebook-card">
+                        <a href="assets/ebook1_free.pdf" download>
+                            <div class="card">
+                                <img src="assets/ebook1-cover.png" alt="Capa do E-book 1">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Primeiros Passos na Programação (Gratuito)</h5>
+                            <p class="card-text">Um guia introdutório para iniciantes em programação, cobrindo conceitos básicos e primeiros passos em linguagens populares.</p>
+                            <a href="assets/ebook1_free.pdf" download class="btn btn-tech">Baixar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- E-book 3 -->
+                <div class="col-md-4 col-6 mb-4">
+                    <div class="ebook-card">
+                        <a href="assets/ebook3_free.pdf" target="_blank">
+                            <div class="card">
+                                <img src="assets/ebook3-cover.png" alt="Capa do E-book 3">
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title">Desenvolvimento Full-Stack Avançado (Pago)</h5>
+                            <p class="card-text">Um guia avançado para desenvolvimento full-stack, cobrindo front-end, back-end e integração de APIs.</p>
+                            <a href="" target="_blank" class="btn btn-tech">Indisponível</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- E-book 4 -->
+                <!-- <div class="col-md-3 col-6 mb-4"> -->
+                    <!-- <div class="ebook-card"> -->
+                        <!-- <a href="assets/ebook4_free.pdf" download> -->
+                            <!-- <div class="card"> -->
+                                <!-- <img src="placeholder-ebook4-cover.jpg" alt="Capa do E-book 4"> -->
+                            <!-- </div> -->
+                        <!-- </a> -->
+                        <!-- <div class="card-body"> -->
+                            <!-- <h5 class="card-title">Fundamentos de APIs (Gratuito)</h5> -->
+                            <!-- <p class="card-text">Introdução ao desenvolvimento e uso de APIs, com exemplos práticos e melhores práticas.</p> -->
+                            <!-- <a href="assets/ebook4_free.pdf" download class="btn btn-tech">Baixar</a> -->
+                        <!-- </div> -->
+                    <!-- </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <p class="text-center">
+                <a href="mailto:marcos.latino@gmail.com" class="contact-icons">
+                    <i class="fas fa-envelope"></i><span>E-mail</span>
+                </a> | 
+                <a href="https://wa.me/5571993301262" target="_blank" class="contact-icons">
+                    <i class="fab fa-whatsapp"></i><span>WhatsApp</span>
+                </a> | 
+                <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
+                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                </a>
+            </p>
+            <form class="contact-form" action="https://formspree.io/f/xnnzrzgk" method="POST">
+                <input type="hidden" name="_replyto" value="email">
+                <input type="hidden" name="_subject" value="Nova Mensagem do Portfolio">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-tech">Enviar</button>
+                <div id="form-message" class="text-center mt-3" style="display: none; color: #00fff7;">
+                    Mensagem enviada com sucesso! Entrarei em contato em breve.
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        <p>&copy; 2025 Marcos Henrique Edington Santos. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for smooth scrolling, form feedback, and preloader -->
+    <script>
+        // Preloader
+        const preloader = document.getElementById('preloader');
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 4000);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a.nav-link').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission feedback
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            setTimeout(() => {
+                document.getElementById('form-message').style.display = 'block';
+                this.reset();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
