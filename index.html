@@ -447,26 +447,34 @@
             animation: fadeIn 1s ease-in-out;
         }
 
-		/* 1. Responsividade para telas muito pequenas (smartphones) */
-    @media (max-width: 576px) {
-        /* Garante que o diálogo da modal ocupe quase toda a largura da tela no mobile */
-        #resumeModal .modal-dialog {
-            max-width: 98vw; /* Ocupa 98% da largura da viewport (tela) */
-            margin: 0 auto; /* Centraliza */
-        }
-        
-        /* 2. Ajuste a altura para que o conteúdo (PDF) seja mais fácil de ver */
-        #resumeModal .modal-body {
-            /* Diminui um pouco a altura para deixar o header e footer visíveis */
-            height: 80vh !important; 
-        }
-        
-        /* 3. Garante que o conteúdo do PDF se ajuste à largura */
-        /* Geralmente, o visualizador de PDF do navegador faz isso, mas esse passo é extra. */
-        #resumeModal iframe {
-            width: 100% !important; 
-        }
-    }
+		/* Correção de Responsividade para Visualizador de PDF em Dispositivos Móveis */
+		@media (max-width: 768px) {
+		    /* 1. Força a modal a ocupar 100% da largura em telas pequenas/médias */
+		    #resumeModal .modal-dialog {
+		        /* Garante que o diálogo (a janela da modal) use o máximo de espaço */
+		        max-width: 98vw !important; 
+		        width: 98% !important; 
+		        margin: 1vh auto !important; /* Centraliza e adiciona uma pequena margem superior */
+		    }
+		
+		    /* 2. Força o conteúdo da modal a se alinhar */
+		    #resumeModal .modal-content {
+		        width: 100% !important;
+		    }
+		    
+		    /* 3. Garante que o iFrame ocupe 100% da largura do corpo da modal */
+		    #resumeModal .modal-body {
+		        padding: 0 !important; /* Remove qualquer padding que possa sobrar nas laterais */
+		        height: 80vh !important; /* Mantém uma boa altura para o PDF */
+		    }
+		
+		    #resumeModal iframe {
+		        /* O iframe deve preencher estritamente 100% da largura do contêiner */
+		        width: 100% !important; 
+		        box-sizing: border-box !important; /* Garante que padding/border não aumente a largura */
+		        overflow-x: hidden !important; /* Tenta forçar a remoção da barra horizontal */
+		    }
+		}
 		
     </style>
 </head>
