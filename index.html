@@ -446,36 +446,36 @@
         .fade-in {
             animation: fadeIn 1s ease-in-out;
         }
-
+		
+		
 		/* Correção de Responsividade para Visualizador de PDF em Dispositivos Móveis */
 		@media (max-width: 768px) {
-		    /* 1. Força a modal a ocupar 100% da largura em telas pequenas/médias */
-		    #resumeModal .modal-dialog {
-		        /* Garante que o diálogo (a janela da modal) use o máximo de espaço */
-		        max-width: 98vw !important; 
-		        width: 98% !important; 
-		        margin: 1vh auto !important; /* Centraliza e adiciona uma pequena margem superior */
-		    }
-		
-		    /* 2. Força o conteúdo da modal a se alinhar */
-		    #resumeModal .modal-content {
-		        width: 100% !important;
-		    }
-		    
-		    /* 3. Garante que o iFrame ocupe 100% da largura do corpo da modal */
-		    #resumeModal .modal-body {
-		        padding: 0 !important; /* Remove qualquer padding que possa sobrar nas laterais */
-		        height: 80vh !important; /* Mantém uma boa altura para o PDF */
-		    }
-		
-		    #resumeModal iframe {
-		        /* O iframe deve preencher estritamente 100% da largura do contêiner */
-		        width: 100% !important; 
-		        box-sizing: border-box !important; /* Garante que padding/border não aumente a largura */
-		        overflow-x: hidden !important; /* Tenta forçar a remoção da barra horizontal */
-		    }
+			/* 1. Força a modal a ocupar 100% da largura em telas pequenas/médias */
+			#resumeModal .modal-dialog {
+				/* Garante que o diálogo (a janela da modal) use o máximo de espaço */
+				max-width: 98vw !important; 
+				width: 98% !important; 
+				margin: 1vh auto !important; /* Centraliza e adiciona uma pequena margem superior */
+			}
+
+			/* 2. Força o conteúdo da modal a se alinhar */
+			#resumeModal .modal-content {
+				width: 100% !important;
+			}
+			
+			/* 3. Garante que o iFrame ocupe 100% da largura do corpo da modal */
+			#resumeModal .modal-body {
+				padding: 0 !important; /* Remove qualquer padding que possa sobrar nas laterais */
+				height: 80vh !important; /* Mantém uma boa altura para o PDF */
+			}
+
+			#resumeModal iframe {
+				/* O iframe deve preencher estritamente 100% da largura do contêiner */
+				width: 100% !important; 
+				box-sizing: border-box !important; /* Garante que padding/border não aumente a largura */
+				overflow-x: hidden !important; /* Tenta forçar a remoção da barra horizontal */
+			}
 		}
-		
     </style>
 </head>
 <body>
@@ -529,9 +529,10 @@
                         <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
                             <i class="fab fa-linkedin"></i><span>LinkedIn</span>
                         </a> | 
-                        <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons">
-                            <i class="fas fa-file-alt"></i><span>Currículo</span>
-                        </a>
+                        <!-- <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons"> -->
+                            <!-- <i class="fas fa-file-alt"></i><span>Currículo</span> -->
+                        <!-- </a> -->
+						<a href="assets/curriculomarcosedington.pdf" id="resumeTrigger" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons"><i class="fas fa-file-alt"></i><span>Currículo</span></a>
                     </p>
                 </div>
             </div>
@@ -937,6 +938,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+	document.addEventListener('DOMContentLoaded', function() {
+            // 1. Pega o elemento que dispara a modal/link
+            const trigger = document.getElementById('resumeTrigger');
+            const pdfUrl = trigger ? trigger.getAttribute('href') : null;
+
+            // 2. Verifica se a largura da tela é menor ou igual a 768px (Mobile)
+            if (trigger && pdfUrl && window.innerWidth <= 768) {
+                
+                // 3. Remove os atributos do Bootstrap para impedir a abertura da modal
+                trigger.removeAttribute('data-bs-toggle');
+                trigger.removeAttribute('data-bs-target');
+                
+                // 4. Garante que o PDF será aberto em uma nova aba/janela
+                trigger.setAttribute('target', '_blank'); 
+            }
+        });
+	
         // Preloader
         const preloader = document.getElementById('preloader');
         setTimeout(() => {
