@@ -4,13 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Marcos Henrique Edington Santos</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@300;400;600&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Custom CSS -->
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -117,19 +113,26 @@
             }
         }
         /* Cards */
+        /* FIX: Aumenta a opacidade do fundo do card e força a cor branca para todo o conteúdo */
         .card {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(10, 15, 31, 0.9); /* Dark blue with high opacity for better contrast */
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
+            color: #ffffff; /* Default text color for card content */
         }
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
         }
-        .card-body h5, .card-body p {
+        /* Força a cor branca para todos os elementos de texto dentro do card-body */
+        .card-body h5, .card-body p, .card-body strong, .card-body li {
             color: #ffffff !important;
+        }
+        /* A cor ciano da data é mantida para o estilo neon */
+        .text-cyan {
+            color: #00fff7 !important;
         }
         .skills-list li {
             background: rgba(0, 255, 255, 0.05);
@@ -446,12 +449,10 @@
     </style>
 </head>
 <body>
-    <!-- Preloader -->
     <div id="preloader">
         <div class="preloader-text">Carregando...</div>
     </div>
 
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Marcos Edington</a>
@@ -471,27 +472,22 @@
         </div>
     </nav>
 
-   <!-- Hero Section – Versão FINAL (design mantido + palavras-chave da vaga inseridas de forma elegante) -->
-	<section id="home" class="hero-section">
+   <section id="home" class="hero-section">
 		<div class="container">
 			<h1 class="fade-in">Marcos Henrique Edington Santos</h1>
 			
-			<!-- Linha principal – mantém o visual original -->
 			<p class="fade-in">Desenvolvedor Full-Stack | Especialista em Soluções Tecnológicas</p>
 			
-			<!-- Nova linha sutil com as tecnologias exatas da vaga – não pesa, mas o ATS e o olho humano captam imediatamente -->
 			<p class="fade-in mt-3" style="font-size: 1.1rem; opacity: 0.9;">
 				<strong>C# .NET Core</strong> • <strong>ASP.NET</strong> • <strong>Oracle PL/SQL</strong> • <strong>JavaScript</strong> • <strong>Visual Studio</strong> • <strong>Crystal Reports</strong>
 			</p>
 
-			<!-- Botão original mantido exatamente como estava -->
 			<div class="text-center">
 				<a href="#projects" class="btn btn-tech btn-lg mt-4 px-5">Ver Projetos</a>
 			</div>
 		</div>
 	</section>
 
-    <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
             <h2 class="section-title">Sobre Mim</h2>
@@ -512,7 +508,6 @@
         </div>
     </section>
 
-    <!-- Resume Modal -->
     <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -602,12 +597,10 @@
         </div>
     </div>
 
-		<!-- Skills Section – Versão FINAL otimizada para a vaga -->
 		<section id="skills" class="py-5">
 			<div class="container">
 				<h2 class="section-title">Competências Técnicas</h2>
 				<div class="row text-center">
-					<!-- Coluna 1 – .NET e APIs (o que mais importa para essa vaga) -->
 					<div class="col-md-4 mb-4">
 						<h4 class="text-cyan">Back-end .NET</h4>
 						<ul class="skills-list list-unstyled">
@@ -619,7 +612,6 @@
 						</ul>
 					</div>
 
-					<!-- Coluna 2 – Banco de Dados e PL/SQL -->
 					<div class="col-md-4 mb-4">
 						<h4 class="text-cyan">Banco de Dados</h4>
 						<ul class="skills-list list-unstyled">
@@ -629,7 +621,6 @@
 						</ul>
 					</div>
 
-					<!-- Coluna 3 – Front-end e integrações -->
 					<div class="col-md-4 mb-4">
 						<h4 class="text-cyan">Front-end & Integrações</h4>
 						<ul class="skills-list list-unstyled">
@@ -647,45 +638,192 @@
 			</div>
 		</section>
 
-    <!-- Experience Section -->
     <section id="experience" class="py-5">
         <div class="container">
             <h2 class="section-title">Experiência Profissional</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Grupo Recursos (Emprego Atual)</h5>
-                            <p class="card-text">Desenvolvedor de sistemas para gestão de trânsito. Criação de dashboards, mapas de calor e monitoramento em tempo real para Transalvador em cidades como Maceió, Camaçari e Salvador.</p>
+            <div class="row g-4"> 
+                
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-code me-2" style="color: #00fff7;"></i>Desenvolvedor de Sistemas 
+                                <small class="text-cyan float-end">Atual (desde 2022)</small>
+                            </h5>
+                            <p class="mb-2"><strong>Grupo Recursos</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• **Criação e Manutenção de APIs REST** em **C# .NET Core**.</li>
+                                <li>• Desenvolvimento de dashboards e **Mapas de Calor** em tempo real (Google Maps API).</li>
+                                <li>• Sistemas que processam milhões de transações diárias para órgãos de trânsito.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Softbox (Ricardo Eletro)</h5>
-                            <p class="card-text">Desenvolvedor (2021-2022), Analista de Suporte Pleno III (2014-2016). Responsável por scripts em Oracle, correção de falhas em notas fiscais, estoque e PDV.</p>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i>Desenvolvedor 
+                                <small class="text-cyan float-end">2020 – 2022</small>
+                            </h5>
+                            <p class="mb-2"><strong>Grupo Recursos</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Desenvolvimento com **Delphi, C# .NET Core e PL/SQL** para gestão de trânsito.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">ALZ TECNOLOGIA</h5>
-                            <p class="card-text">Analista de Sistemas Jr II (2017). Auxílio em análise, suporte técnico, levantamento de requisitos e testes.</p>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i>Analista de Suporte / Desenvolvedor 
+                                <small class="text-cyan float-end">2018 – 2020</small>
+                            </h5>
+                            <p class="mb-2"><strong>SMART.COM (Parceria)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Projetos de desenvolvimento e suporte técnico em parceria.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-laptop-code me-2" style="color: #00fff7;"></i>Analista de Sistemas Jr II 
+                                <small class="text-cyan float-end">2017</small>
+                            </h5>
+                            <p class="mb-2"><strong>ALZ Tecnologia (Ricardo Eletro)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Projeto de 3 meses: levantamento de requisitos, testes e documentação.</li>
+                                <li>• Experiência com **Toad, SQL Developer, TortoiseSVN** e OTRS.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i>Desenvolvedor 
+                                <small class="text-cyan float-end">2015 – 2016</small>
+                            </h5>
+                            <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Desenvolvimento de **Scripts PL/SQL complexos** (Oracle) para correção de dados críticos.</li>
+                                <li>• Criação de relatórios financeiros e gerenciais utilizando **Crystal Reports**.</li>
+                                <li>• Automação de processos de suporte em ambiente de varejo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-user-tie me-2" style="color: #00fff7;"></i>Analista de Suporte Pleno III 
+                                <small class="text-cyan float-end">2014 – 2015</small>
+                            </h5>
+                            <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Gerenciamento de incidentes críticos durante fusão empresarial.</li>
+                                <li>• Implantação do sistema MVLOJAS e otimização de estoque/vendas.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i>Técnico de Suporte / Desenvolvedor 
+                                <small class="text-cyan float-end">2006 – 2014</small>
+                            </h5>
+                            <p class="mb-2"><strong>AVANSYS (Secretaria da Educação)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Helpdesk, manutenção de sistemas e desenvolvimento.</li>
+                                <li>• Linguagens-chave: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li>
+                                <li>• Bancos: Oracle, Access. Ferramentas: Toad, **Crystal Reports**.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-chalkboard-teacher me-2" style="color: #00fff7;"></i>Instrutor de Informática 
+                                <small class="text-cyan float-end">2006 – 2007</small>
+                            </h5>
+                            <p class="mb-2"><strong>STEFANINI</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Projeto Educar para Crescer (outro turno).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i>Técnico de Suporte Operacional II 
+                                <small class="text-cyan float-end">2005</small>
+                            </h5>
+                            <p class="mb-2"><strong>NETRA (Secretaria da Educação)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Atendimento de Helpdesk e suporte técnico.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i>Técnico de Suporte / Web Designer 
+                                <small class="text-cyan float-end">2001 – 2005</small>
+                            </h5>
+                            <p class="mb-2"><strong>Instituto Miguel Calmon (Secretaria da Educação)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Manutenção de computadores e helpdesk (Projeto Somar).</li>
+                                <li>• Criação do site de suporte da SEC-BA.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i>Técnico em Informática 
+                                <small class="text-cyan float-end">2001</small>
+                            </h5>
+                            <p class="mb-2"><strong>UNITECH (Secretaria da Educação)</strong></p>
+                            <ul class="list-unstyled mt-auto small">
+                                <li>• Participação no Projeto Matrícula 2001 – SOMAR.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <!-- Projects Section -->
     <section id="projects" class="py-5">
         <div class="container">
             <h2 class="section-title">Projetos</h2>
             <div class="row">
-                <!-- Projeto VivaCondo -->
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -701,12 +839,10 @@
                             - <strong>Financeiro</strong>: Geração de segunda via de boletos e consulta ao histórico de pagamentos.<br>
                             O VivaCondo foi projetado para otimizar processos, promover transparência e facilitar a interação entre síndicos, moradores e administradores, garantindo uma gestão eficiente e moderna.</p>
                             <p class="card-text">
-                                <!-- <a href="assets/VivaCondo_Manual.pdf" target="_blank" class="btn btn-tech">Ver Manual</a> -->
-                            </p>
+                                </p>
                         </div>
                     </div>
                 </div>
-                <!-- Projeto Mídia Indoor -->
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -723,7 +859,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Projeto Mapa de Calor -->
                 <div class="col-md-6 offset-md-3">
                     <div class="card mb-4">
                         <div class="card-body">
@@ -736,7 +871,6 @@
         </div>
     </section>
 
-    <!-- E-books Section -->
     <section id="ebooks" class="py-5">
         <div class="container">
             <h2 class="section-title">E-books</h2>
@@ -746,7 +880,6 @@
                 </div>
             </div>
             <div class="row ebook-gallery justify-content-center">
-                <!-- E-book 2 -->
                 <div class="col-md-4 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook2_free.pdf" download>
@@ -761,7 +894,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- E-book 1 -->
                 <div class="col-md-4 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook1_free.pdf" download>
@@ -776,7 +908,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- E-book 3 -->
                 <div class="col-md-4 col-6 mb-4">
                     <div class="ebook-card">
                         <a href="assets/ebook3_free.pdf" target="_blank">
@@ -791,26 +922,10 @@
                         </div>
                     </div>
                 </div>
-                <!-- E-book 4 -->
-                <!-- <div class="col-md-3 col-6 mb-4"> -->
-                    <!-- <div class="ebook-card"> -->
-                        <!-- <a href="assets/ebook4_free.pdf" download> -->
-                            <!-- <div class="card"> -->
-                                <!-- <img src="placeholder-ebook4-cover.jpg" alt="Capa do E-book 4"> -->
-                            <!-- </div> -->
-                        <!-- </a> -->
-                        <!-- <div class="card-body"> -->
-                            <!-- <h5 class="card-title">Fundamentos de APIs (Gratuito)</h5> -->
-                            <!-- <p class="card-text">Introdução ao desenvolvimento e uso de APIs, com exemplos práticos e melhores práticas.</p> -->
-                            <!-- <a href="assets/ebook4_free.pdf" download class="btn btn-tech">Baixar</a> -->
-                        <!-- </div> -->
-                    <!-- </div> -->
-                <!-- </div> -->
-            </div>
+                </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
             <h2 class="section-title">Contato</h2>
@@ -848,14 +963,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="text-center py-3">
         <p>&copy; 2025 Marcos Henrique Edington Santos. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS for smooth scrolling, form feedback, and preloader -->
     <script>
         // Preloader
         const preloader = document.getElementById('preloader');
