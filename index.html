@@ -16,6 +16,15 @@
             position: relative;
             margin: 0;
         }
+		/* Correção do Menu Hamburger para Neon (Cyan) */
+        .navbar-toggler {
+            border-color: #00fff7 !important; /* Borda Neon */
+            box-shadow: 0 0 5px #00fff7; /* Brilho suave */
+        }
+        .navbar-toggler-icon {
+            /* Desenha os 3 tracinhos na cor Cyan */
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 255, 247, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
         /* Preloader */
         #preloader {
             position: fixed;
