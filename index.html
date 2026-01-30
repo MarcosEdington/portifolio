@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> 
+<html lang="en"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,10 +61,27 @@
         .nav-link {
             color: #e0e0e0 !important;
             transition: color 0.3s;
+            cursor: pointer;
         }
         .nav-link:hover {
             color: #00fff7 !important;
         }
+        /* Language Button */
+        .btn-lang {
+            border: 1px solid #00fff7;
+            color: #00fff7;
+            background: transparent;
+            margin-left: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+        .btn-lang:hover {
+            background: #00fff7;
+            color: #000;
+            box-shadow: 0 0 10px #00fff7;
+        }
+
         /* Hero Section */
         .hero-section {
             background: radial-gradient(circle at top left, rgba(0, 255, 247, 0.5), rgba(0, 102, 255, 0.5), rgba(0, 0, 0, 0.7));
@@ -113,24 +130,21 @@
             }
         }
         /* Cards */
-        /* FIX: Aumenta a opacidade do fundo do card e força a cor branca para todo o conteúdo */
         .card {
-            background: rgba(10, 15, 31, 0.9); /* Dark blue with high opacity for better contrast */
+            background: rgba(10, 15, 31, 0.9);
             border: 1px solid rgba(0, 255, 255, 0.2);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
-            color: #ffffff; /* Default text color for card content */
+            color: #ffffff;
         }
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
         }
-        /* Força a cor branca para todos os elementos de texto dentro do card-body */
         .card-body h5, .card-body p, .card-body strong, .card-body li {
             color: #ffffff !important;
         }
-        /* A cor ciano da data é mantida para o estilo neon */
         .text-cyan {
             color: #00fff7 !important;
         }
@@ -274,135 +288,6 @@
             overflow-y: auto;
             padding: 20px;
         }
-        .modal-body .resume-content {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .modal-body h1 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #007bff;
-            text-align: center;
-            margin-bottom: 5px;
-        }
-        .modal-body .contact {
-            text-align: center;
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 20px;
-        }
-        .modal-body .contact a {
-            color: #007bff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .modal-body .contact a:hover {
-            text-decoration: underline;
-        }
-        .modal-body h2 {
-            font-size: 1.3rem;
-            font-weight: 500;
-            text-transform: uppercase;
-            color: #007bff;
-            border-bottom: 2px solid #007bff;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-        .modal-body .summary {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-        .modal-body .education {
-            background-color: #fff;
-            border-left: 4px solid #007bff;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        .modal-body .education .edu-title {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .modal-body .education .edu-title i {
-            color: #007bff;
-        }
-        .modal-body .education .edu-institution {
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .modal-body .education p {
-            font-size: 0.9rem;
-            margin-top: 8px;
-        }
-        .modal-body .skills ul {
-            list-style-type: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .modal-body .skills li {
-            background-color: #e7f3ff;
-            border: 1px solid #007bff;
-            border-radius: 20px;
-            padding: 6px 12px;
-            font-size: 0.85rem;
-            color: #007bff;
-        }
-        .modal-body .experience .job {
-            background-color: #fff;
-            border-left: 4px solid #007bff;
-            padding: 10px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        .modal-body .experience .job-title {
-            font-weight: 700;
-            font-size: 1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .modal-body .experience .job-title i {
-            color: #007bff;
-        }
-        .modal-body .experience .job-company {
-            font-weight: 500;
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .modal-body .experience .job-period {
-            font-size: 0.85rem;
-            color: #999;
-            float: right;
-        }
-        .modal-body .experience ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            margin-top: 8px;
-        }
-        .modal-body .experience li {
-            font-size: 0.9rem;
-            margin-bottom: 6px;
-        }
-        .modal-body .experience li strong {
-            font-weight: 600;
-        }
         .modal-footer {
             border-color: rgba(0, 255, 255, 0.2);
             justify-content: center;
@@ -415,23 +300,6 @@
         .modal-footer .btn-download:hover {
             background: #00cccc;
             box-shadow: 0 0 10px #00fff7;
-        }
-        @media (max-width: 767.98px) {
-            .modal-dialog {
-                margin: 10px;
-            }
-            .modal-body {
-                max-height: 60vh;
-            }
-            .modal-body h1 {
-                font-size: 1.8rem;
-            }
-            .modal-body h2 {
-                font-size: 1.2rem;
-            }
-            .modal-body .experience .job, .modal-body .education {
-                padding: 8px;
-            }
         }
         /* Footer */
         footer {
@@ -446,14 +314,11 @@
         .fade-in {
             animation: fadeIn 1s ease-in-out;
         }
-		
-		
-		
     </style>
 </head>
 <body>
     <div id="preloader">
-        <div class="preloader-text">Carregando...</div>
+        <div class="preloader-text" data-i18n="loading">Loading...</div>
     </div>
 
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -463,90 +328,95 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">Sobre Mim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Habilidades</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experiência</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projetos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#ebooks">E-books</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav_about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-i18n="nav_skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav_exp">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav_proj">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#ebooks" data-i18n="nav_ebooks">E-books</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a></li>
+                    <li class="nav-item">
+                        <button id="lang-toggle" class="btn btn-sm btn-lang" onclick="toggleLanguage()">
+                            <i class="fas fa-globe"></i> <span id="lang-label">PT</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   <section id="home" class="hero-section">
+  <section id="home" class="hero-section">
 		<div class="container">
 			<h1 class="fade-in">Marcos Henrique Edington Santos</h1>
 			
-			<p class="fade-in">Desenvolvedor Full-Stack | Especialista em Soluções Tecnológicas</p>
+			<p class="fade-in" data-i18n="hero_role">
+                Backend / Fullstack Software Developer | .NET, REST APIs, SQL | Real-Time Data & Mapping Solutions
+            </p>
 			
 			<p class="fade-in mt-3" style="font-size: 1.1rem; opacity: 0.9;">
-				<strong>C# .NET Core</strong> • <strong>ASP.NET</strong> • <strong>Oracle PL/SQL</strong> • <strong>JavaScript</strong> • <strong>Visual Studio</strong> • <strong>Crystal Reports</strong>
+				<strong>C#</strong> | <strong>.NET Core</strong> | <strong>SQL Server</strong> | <strong>Oracle</strong> | <strong>JavaScript</strong> | <strong>Google Maps APIs</strong>
 			</p>
 
 			<div class="text-center">
-				<a href="#projects" class="btn btn-tech btn-lg mt-4 px-5">Ver Projetos</a>
+				<a href="#projects" class="btn btn-tech btn-lg mt-4 px-5" data-i18n="hero_btn">View Projects</a>
 			</div>
 		</div>
 	</section>
 
     <section id="about" class="py-5">
-    <div class="container">
-        <h2 class="section-title">Sobre Mim</h2>
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
+        <div class="container">
+            <h2 class="section-title" data-i18n="section_about">About Me</h2>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
 
-                <p>
-                    Sou Desenvolvedor de Sistemas com sólida experiência em desenvolvimento backend, dados e visualização de informações, atuando na criação de soluções completas <strong>end-to-end</strong> — da modelagem do banco de dados e APIs até dashboards interativos voltados à tomada de decisão.
-                </p>
+                    <p data-i18n="about_p1">
+                        Backend / Fullstack Software Developer with strong experience in backend systems, real-time data processing and data visualization.
+                    </p>
 
-                <p>
-                    Sou autor e idealizador de <strong>sistemas estratégicos para gestão de trânsito e mobilidade urbana</strong>, com destaque para o <strong>Dashboard de Blitz</strong>, desenvolvido do zero, com API própria, integração com banco de dados e frontend interativo. 
-                    O sistema permite ao gestor visualizar, em mapa do Google, todas as blitz em tempo real, com detalhes como tipo de operação (ex.: alcoolemia), data, horário e status.
-                </p>
+                    <p data-i18n="about_p2">
+                        I design and build end-to-end solutions — from database modeling and REST APIs to interactive dashboards and geospatial visualization — focused on decision-making and operational efficiency.
+                    </p>
 
-                <p>
-                    A solução conta ainda com <strong>gráficos analíticos e filtros avançados</strong> (placa, tipo de veículo, tipo de blitz, período e tipo de autuação), oferecendo indicadores como:
-                </p>
+                    <p data-i18n="about_p3">
+                        I am the author and main developer of strategic systems for traffic and urban mobility management, including:
+                    </p>
 
-                <ul>
-                    <li>veículos autuados</li>
-                    <li>vítimas com e sem óbito</li>
-                    <li>dados consolidados para análise operacional e estratégica</li>
-                </ul>
+                    <ul data-i18n="about_list">
+                        <li>Real-time Traffic Operations Dashboard, developed from scratch with custom APIs, database integration and interactive frontend.</li>
+                        <li>Google Maps-based visualization showing live traffic operations, checkpoints and incidents with detailed operational data.</li>
+                        <li>Analytical dashboards with advanced filters (vehicle type, operation type, time range, infractions) and key indicators for management and planning.</li>
+                    </ul>
 
-                <p>
-                    Também desenvolvi o <strong>Mapa de Calor de Infrações de Trânsito</strong> para o município de Camaçari, utilizando Google Maps Heatmap, permitindo ao gestor identificar visualmente as áreas com maior incidência de infrações por tipo. 
-                    Esse projeto apoia decisões estratégicas de fiscalização e políticas públicas de trânsito.
-                    <br>
-                    <a href="https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/" target="_blank">
-                        Ver matéria oficial do projeto
-                    </a>
-                </p>
+                    <p>
+                        <span data-i18n="about_p4">I also developed a Traffic Violation Heatmap System for the municipality of Camaçari, using Google Maps Heatmap, enabling managers to identify high-incidence areas and support public policy and enforcement strategies.</span>
+                        <br>
+                        <strong data-i18n="about_link_intro">🔗 Official publication by the Municipality of Camaçari:</strong><br>
+                        <a href="https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/" target="_blank" class="text-break">
+                            https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/
+                        </a>
+                    </p>
 
-                <p>
-                    Atualmente, atuo no <strong>Grupo Recursos</strong>, desenvolvendo soluções para órgãos de trânsito como a <strong>Transalvador</strong>, utilizando tecnologias como 
-                    .NET Core, Node.js, PL/SQL, JavaScript, Delphi, SQL Server, Oracle e Google Maps APIs.
-                </p>
+                    <p data-i18n="about_p5">
+                        Currently, I work at <strong>Grupo Recursos</strong>, developing systems for traffic authorities such as <strong>Transalvador</strong>, using technologies including .NET Core, Node.js, PL/SQL, JavaScript, Delphi, SQL Server, Oracle and Google Maps APIs.
+                    </p>
 
-                <p>
-                    Tenho perfil <strong>analítico, orientado a dados e resultados</strong>, com forte capacidade de transformar informações complexas em dashboards claros, acionáveis e estratégicos.
-                </p>
+                    <p data-i18n="about_p6">
+                        I have a strong analytical mindset and a data-driven approach, focused on transforming complex information into clear, actionable and strategic dashboards.
+                    </p>
 
-                <p class="text-center mt-4">
-                    <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
-                        <i class="fab fa-linkedin"></i><span>LinkedIn</span>
-                    </a> | 
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons"> 
-                        <i class="fas fa-file-alt"></i><span>Currículo</span>
-                    </a>
-                </p>
+                    <p class="text-center mt-4">
+                        <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
+                            <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                        </a> | 
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#resumeModal" class="contact-icons"> 
+                            <i class="fas fa-file-alt"></i><span data-i18n="resume_btn">Resume</span>
+                        </a>
+                    </p>
 
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
@@ -555,7 +425,7 @@
         <div class="modal-content">
             
             <div class="modal-header">
-                <h5 class="modal-title" id="resumeModalLabel">Currículo</h5>
+                <h5 class="modal-title" id="resumeModalLabel" data-i18n="resume_title">Resume</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
             </div>
             
@@ -565,26 +435,26 @@
                     <iframe 
                         src="assets/curriculomarcosedington.pdf" 
                         style="width: 100%; height: 100%; border: none; background-color: white;" 
-                        title="Visualizador de Currículo PDF"
+                        title="Resume PDF Viewer"
                         loading="lazy">
                     </iframe>
                 </div>
                 
                 <div class="d-block d-sm-none d-flex flex-column justify-content-center align-items-center text-center p-4" style="height: 100%;">
                     
-                    <p class="lead text-dark">
-                        Para visualizar o currículo em **tamanho adaptado à tela** (sem rolagem lateral), clique no botão abaixo.
+                    <p class="lead text-dark" data-i18n="resume_mobile_text">
+                        To view the resume in **screen-adapted size**, click the button below.
                     </p>
                     
                     <a href="assets/curriculomarcosedington.pdf" target="_blank" class="btn btn-primary btn-lg mt-3">
-                        <i class="fas fa-external-link-alt me-2"></i> Abrir em Tela Cheia (Recomendado)
+                        <i class="fas fa-external-link-alt me-2"></i> <span data-i18n="resume_open">Open Full Screen</span>
                     </a>
                     
                 </div>
             </div>
             
             <div class="modal-footer">
-                <a href="assets/curriculomarcosedington.pdf" download class="btn btn-download">Baixar PDF</a>
+                <a href="assets/curriculomarcosedington.pdf" download class="btn btn-download" data-i18n="resume_download">Download PDF</a>
             </div>
         </div>
     </div>
@@ -592,63 +462,59 @@
 
 		<section id="skills" class="py-5">
 			<div class="container">
-				<h2 class="section-title">Competências Técnicas</h2>
+				<h2 class="section-title" data-i18n="section_skills">Technical Skills</h2>
 				<div class="row text-center">
 					<div class="col-md-4 mb-4">
 						<h4 class="text-cyan">Back-end .NET</h4>
 						<ul class="skills-list list-unstyled">
 							<li class="p-3 mb-2">C# / .NET Core 9.0</li>
 							<li class="p-3 mb-2">ASP.NET Web Forms & MVC</li>
-							<li class="p-3 mb-2">Criação de APIs REST próprias (.NET)</li>
+							<li class="p-3 mb-2" data-i18n="skill_api">REST API Creation (.NET)</li>
 							<li class="p-3 mb-2">Microsoft Visual Studio</li>
 							<li class="p-3 mb-2">Crystal Reports</li>
 						</ul>
 					</div>
 
 					<div class="col-md-4 mb-4">
-						<h4 class="text-cyan">Banco de Dados</h4>
+						<h4 class="text-cyan" data-i18n="skill_db">Database</h4>
 						<ul class="skills-list list-unstyled">
-							<li class="p-3 mb-2">Oracle PL/SQL Avançado</li>
+							<li class="p-3 mb-2" data-i18n="skill_plsql">Advanced Oracle PL/SQL</li>
 							<li class="p-3 mb-2">SQL Server</li>
 							<li class="p-3 mb-2">Procedures, Triggers, Packages</li>
 						</ul>
 					</div>
 
 					<div class="col-md-4 mb-4">
-						<h4 class="text-cyan">Front-end & Integrações</h4>
+						<h4 class="text-cyan">Front-end & Integrations</h4>
 						<ul class="skills-list list-unstyled">
 							<li class="p-3 mb-2">JavaScript / Node.js</li>
 							<li class="p-3 mb-2">HTML5 / CSS3 / Bootstrap</li>
 							<li class="p-3 mb-2">Google Maps JavaScript API</li>
-							<li class="p-3 mb-2">Consumo e criação de APIs REST</li>
+							<li class="p-3 mb-2" data-i18n="skill_rest">REST API Consumption & Creation</li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="text-center mt-4">
-					<p class="lead">+8 anos de experiência em desenvolvimento, implantação e manutenção de sistemas críticos</p>
+					<p class="lead" data-i18n="skill_summary">+8 years of experience in development, deployment, and maintenance of critical systems</p>
 				</div>
 			</div>
 		</section>
 
     <section id="experience" class="py-5">
         <div class="container">
-            <h2 class="section-title">Experiência Profissional</h2>
+            <h2 class="section-title" data-i18n="section_exp">Professional Experience</h2>
             <div class="row g-4"> 
                 
-                <div class="col-md-6">
+                <div class="col-md-12">
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-code me-2" style="color: #00fff7;"></i>Desenvolvedor de Sistemas 
-                                <small class="text-cyan float-end">Atual (desde 2022)</small>
+                                <i class="fas fa-code me-2" style="color: #00fff7;"></i><span data-i18n="job1_title">Systems Developer</span>
+                                <small class="text-cyan float-end" data-i18n="job1_date">Current (since 2022)</small>
                             </h5>
                             <p class="mb-2"><strong>Grupo Recursos</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• **Criação e Manutenção de APIs REST** em **C# .NET Core**.</li>
-                                <li>• Desenvolvimento de dashboards e **Mapas de Calor** em tempo real (Google Maps API).</li>
-                                <li>• Sistemas que processam milhões de transações diárias para órgãos de trânsito.</li>
-                            </ul>
+                            <div class="mt-auto small" data-i18n="job1_desc"></div>
                         </div>
                     </div>
                 </div>
@@ -657,12 +523,12 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i>Desenvolvedor 
+                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i><span data-i18n="job2_title">Developer</span>
                                 <small class="text-cyan float-end">2020 – 2022</small>
                             </h5>
                             <p class="mb-2"><strong>Grupo Recursos</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Desenvolvimento com **Delphi, C# .NET Core e PL/SQL** para gestão de trânsito.</li>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job2_desc">
+                                <li>• Development with **Delphi, C# .NET Core and PL/SQL** for traffic management.</li>
                             </ul>
                         </div>
                     </div>
@@ -672,12 +538,12 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i>Analista de Suporte / Desenvolvedor 
+                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i><span data-i18n="job3_title">Support Analyst / Developer</span>
                                 <small class="text-cyan float-end">2018 – 2020</small>
                             </h5>
-                            <p class="mb-2"><strong>SMART.COM (Parceria)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Projetos de desenvolvimento e suporte técnico em parceria.</li>
+                            <p class="mb-2"><strong>SMART.COM (Partnership)</strong></p>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job3_desc">
+                                <li>• Technical support and development projects in partnership.</li>
                             </ul>
                         </div>
                     </div>
@@ -687,13 +553,13 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-laptop-code me-2" style="color: #00fff7;"></i>Analista de Sistemas Jr II 
+                                <i class="fas fa-laptop-code me-2" style="color: #00fff7;"></i><span data-i18n="job4_title">Systems Analyst Jr II</span>
                                 <small class="text-cyan float-end">2017</small>
                             </h5>
                             <p class="mb-2"><strong>ALZ Tecnologia (Ricardo Eletro)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Projeto de 3 meses: levantamento de requisitos, testes e documentação.</li>
-                                <li>• Experiência com **Toad, SQL Developer, TortoiseSVN** e OTRS.</li>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job4_desc">
+                                <li>• 3-month project: requirements gathering, testing, and documentation.</li>
+                                <li>• Experience with **Toad, SQL Developer, TortoiseSVN**, and OTRS.</li>
                             </ul>
                         </div>
                     </div>
@@ -703,14 +569,14 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i>Desenvolvedor 
+                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i><span data-i18n="job5_title">Developer</span>
                                 <small class="text-cyan float-end">2015 – 2016</small>
                             </h5>
                             <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Desenvolvimento de **Scripts PL/SQL complexos** (Oracle) para correção de dados críticos.</li>
-                                <li>• Criação de relatórios financeiros e gerenciais utilizando **Crystal Reports**.</li>
-                                <li>• Automação de processos de suporte em ambiente de varejo.</li>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job5_desc">
+                                <li>• Development of **complex PL/SQL scripts** (Oracle) for critical data correction.</li>
+                                <li>• Creation of financial and management reports using **Crystal Reports**.</li>
+                                <li>• Automation of support processes in a retail environment.</li>
                             </ul>
                         </div>
                     </div>
@@ -720,13 +586,13 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-user-tie me-2" style="color: #00fff7;"></i>Analista de Suporte Pleno III 
+                                <i class="fas fa-user-tie me-2" style="color: #00fff7;"></i><span data-i18n="job6_title">Support Analyst III</span>
                                 <small class="text-cyan float-end">2014 – 2015</small>
                             </h5>
                             <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Gerenciamento de incidentes críticos durante fusão empresarial.</li>
-                                <li>• Implantação do sistema MVLOJAS e otimização de estoque/vendas.</li>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job6_desc">
+                                <li>• Critical incident management during corporate merger.</li>
+                                <li>• Implementation of the MVLOJAS system and optimization of inventory/sales.</li>
                             </ul>
                         </div>
                     </div>
@@ -736,14 +602,14 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i>Técnico de Suporte / Desenvolvedor 
+                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i><span data-i18n="job7_title">Support Technician / Developer</span>
                                 <small class="text-cyan float-end">2006 – 2014</small>
                             </h5>
-                            <p class="mb-2"><strong>AVANSYS (Secretaria da Educação)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Helpdesk, manutenção de sistemas e desenvolvimento.</li>
-                                <li>• Linguagens-chave: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li>
-                                <li>• Bancos: Oracle, Access. Ferramentas: Toad, **Crystal Reports**.</li>
+                            <p class="mb-2"><strong>AVANSYS (Education Dept.)</strong></p>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job7_desc">
+                                <li>• Helpdesk, system maintenance, and development.</li>
+                                <li>• Key languages: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li>
+                                <li>• Databases: Oracle, Access. Tools: Toad, **Crystal Reports**.</li>
                             </ul>
                         </div>
                     </div>
@@ -753,12 +619,12 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-chalkboard-teacher me-2" style="color: #00fff7;"></i>Instrutor de Informática 
+                                <i class="fas fa-chalkboard-teacher me-2" style="color: #00fff7;"></i><span data-i18n="job8_title">IT Instructor</span>
                                 <small class="text-cyan float-end">2006 – 2007</small>
                             </h5>
                             <p class="mb-2"><strong>STEFANINI</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Projeto Educar para Crescer (outro turno).</li>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job8_desc">
+                                <li>• 'Educar para Crescer' Project.</li>
                             </ul>
                         </div>
                     </div>
@@ -768,12 +634,12 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i>Técnico de Suporte Operacional II 
+                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job9_title">Operational Support Technician II</span>
                                 <small class="text-cyan float-end">2005</small>
                             </h5>
-                            <p class="mb-2"><strong>NETRA (Secretaria da Educação)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Atendimento de Helpdesk e suporte técnico.</li>
+                            <p class="mb-2"><strong>NETRA (Education Dept.)</strong></p>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job9_desc">
+                                <li>• Helpdesk attendance and technical support.</li>
                             </ul>
                         </div>
                     </div>
@@ -783,13 +649,13 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i>Técnico de Suporte / Web Designer 
+                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job10_title">Support Tech / Web Designer</span>
                                 <small class="text-cyan float-end">2001 – 2005</small>
                             </h5>
-                            <p class="mb-2"><strong>Instituto Miguel Calmon (Secretaria da Educação)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Manutenção de computadores e helpdesk (Projeto Somar).</li>
-                                <li>• Criação do site de suporte da SEC-BA.</li>
+                            <p class="mb-2"><strong>Instituto Miguel Calmon</strong></p>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job10_desc">
+                                <li>• Computer maintenance and helpdesk (Project Somar).</li>
+                                <li>• Creation of the support website for SEC-BA.</li>
                             </ul>
                         </div>
                     </div>
@@ -799,12 +665,12 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i>Técnico em Informática 
+                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job11_title">IT Technician</span>
                                 <small class="text-cyan float-end">2001</small>
                             </h5>
-                            <p class="mb-2"><strong>UNITECH (Secretaria da Educação)</strong></p>
-                            <ul class="list-unstyled mt-auto small">
-                                <li>• Participação no Projeto Matrícula 2001 – SOMAR.</li>
+                            <p class="mb-2"><strong>UNITECH (Education Dept.)</strong></p>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job11_desc">
+                                <li>• Participation in Project Matrícula 2001 – SOMAR.</li>
                             </ul>
                         </div>
                     </div>
@@ -815,38 +681,39 @@
     </section>
     <section id="projects" class="py-5">
         <div class="container">
-            <h2 class="section-title">Projetos</h2>
+            <h2 class="section-title" data-i18n="section_projects">Projects</h2>
             <div class="row">
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title">Aplicativo VivaCondo</h5>
-                            <p class="card-text">Desenvolvido do zero, o VivaCondo é um aplicativo Android para gestão condominial, projetado para simplificar e modernizar a administração de condomínios. Implantado com sucesso no condomínio Vivendas do Rio, o aplicativo oferece uma experiência intuitiva e funcionalidades robustas, incluindo:<br>
-                            - <strong>Gestão de Visitantes</strong>: Registro e controle de entrada de visitantes.<br>
-                            - <strong>Liberação de Acessos</strong>: Autorização segura e prática para moradores e visitantes.<br>
-                            - <strong>Reserva de Espaços</strong>: Agendamento de áreas comuns com opções de pagamento via PIX ou boleto.<br>
-                            - <strong>Anúncios de Moradores</strong>: Cadastro e divulgação de comunicados internos.<br>
-                            - <strong>Registro de Pets</strong>: Gerenciamento de informações sobre animais de estimação.<br>
-                            - <strong>Assembleias e Atas</strong>: Organização de reuniões com registro de atas digitais.<br>
-                            - <strong>Comunicados</strong>: Envio de notificações rápidas e centralizadas.<br>
-                            - <strong>Financeiro</strong>: Geração de segunda via de boletos e consulta ao histórico de pagamentos.<br>
-                            O VivaCondo foi projetado para otimizar processos, promover transparência e facilitar a interação entre síndicos, moradores e administradores, garantindo uma gestão eficiente e moderna.</p>
-                            <p class="card-text">
-                                </p>
+                            <h5 class="card-title">VivaCondo App</h5>
+                            <p class="card-text" data-i18n="proj_viva_desc">
+                                Developed from scratch, VivaCondo is an Android app for condominium management. Features include:<br>
+                                - <strong>Visitor Management</strong>: Entry control.<br>
+                                - <strong>Access Release</strong>: Secure authorization for guests.<br>
+                                - <strong>Space Booking</strong>: Scheduling common areas with PIX/Boleto payment.<br>
+                                - <strong>Announcements</strong>: Internal communication.<br>
+                                - <strong>Pet Registry</strong>: Management of pet info.<br>
+                                - <strong>Assemblies & Minutes</strong>: Meeting organization.<br>
+                                - <strong>Financial</strong>: Payment history and duplicate bills.<br>
+                                Designed to optimize processes and promote transparency.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title">Sistema de Mídia Indoor para Elevadores</h5>
-                            <p class="card-text">Implantado no condomínio Vivendas do Rio, o sistema de mídia indoor para elevadores oferece uma plataforma dinâmica e interativa, projetada para engajar moradores com conteúdos variados. A solução exibe anúncios de moradores, propagandas externas, comunicados da administração, avisos importantes, resultados de loterias (como Mega-Sena e Quina) e novidades sobre lançamentos de filmes e plataformas de streaming. Com uma interface otimizada para o ambiente compacto de elevadores, o sistema garante usabilidade e impacto visual, promovendo comunicação eficiente e entretenimento para os usuários.</p>
+                            <h5 class="card-title" data-i18n="proj_elevator_title">Elevator Indoor Media System</h5>
+                            <p class="card-text" data-i18n="proj_elevator_desc">
+                                Implemented at Vivendas do Rio, this indoor media system for elevators offers a dynamic platform designed to engage residents. The solution displays resident ads, external advertisements, administration notices, lottery results, and entertainment news. Optimized for the compact elevator environment, ensuring usability and visual impact.
+                            </p>
                             <div class="project-gallery d-flex flex-wrap justify-content-center">
-                                <img src="assets/placeholder-image-elevador1.jpg" alt="Foto do Elevador 1" class="m-2">
-                                <img src="assets/placeholder-image-elevador2.jpg" alt="Foto do Elevador 2" class="m-2">
+                                <img src="assets/placeholder-image-elevador1.jpg" alt="Elevator Photo 1" class="m-2">
+                                <img src="assets/placeholder-image-elevador2.jpg" alt="Elevator Photo 2" class="m-2">
                                 <video autoplay muted controls class="m-2">
                                     <source src="assets/placeholder-video-elevador.mp4" type="video/mp4">
-                                    Seu navegador não suporta vídeo.
+                                    Your browser does not support video.
                                 </video>
                             </div>
                         </div>
@@ -855,8 +722,11 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <h5 class="card-title">Mapa de Calor de Infrações - SMTTP Camaçari</h5>
-                            <p class="card-text">Desenvolvimento de um mapa de calor para gestão de trânsito e transporte, que virou produto e gerou contrato. Permite monitoramento em tempo real de ocorrências e estatísticas, otimizando decisões estratégicas. Referência: <a href="https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/" target="_blank" style="color: #00fff7;">Site Oficial</a>.</p>
+                            <h5 class="card-title" data-i18n="proj_heatmap_title">Infraction Heatmap - SMTTP</h5>
+                            <p class="card-text">
+                                <span data-i18n="proj_heatmap_desc">Development of a traffic heat map for transport management, which became a product and generated a contract. Allows real-time monitoring of occurrences and statistics, optimizing strategic decisions.</span>
+                                Reference: <a href="https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/" target="_blank" style="color: #00fff7;" data-i18n="official_site">Official Site</a>.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -869,7 +739,7 @@
             <h2 class="section-title">E-books</h2>
             <div class="row">
                 <div class="col-md-8 offset-md-2 text-center">
-                    <p>Confira meus e-books de autoria própria! Disponibilizo alguns exemplares gratuitamente e outros pagos, abordando temas como introdução à programação, tecnologia, automação e desenvolvimento de software. Clique nas capas abaixo para fazer o download ou adquirir.</p>
+                    <p data-i18n="ebooks_intro">Check out my self-authored e-books! I offer some free copies and other paid ones, covering topics such as introduction to programming, technology, automation, and software development. Click on the covers below to download or purchase.</p>
                 </div>
             </div>
             <div class="row ebook-gallery justify-content-center">
@@ -877,13 +747,13 @@
                     <div class="ebook-card">
                         <a href="assets/ebook2_free.pdf" download>
                             <div class="card">
-                                <img src="assets/ebook2-cover2.jpg" alt="Capa do E-book 2">
+                                <img src="assets/ebook2-cover2.jpg" alt="Cover E-book 2">
                             </div>
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Introdução à Automação (Gratuito)</h5>
-                            <p class="card-text">Explora os fundamentos da automação, incluindo ferramentas e técnicas para otimizar processos.</p>
-                            <a href="" download class="btn btn-tech">Indisponível</a>
+                            <h5 class="card-title" data-i18n="ebook1_title">Intro to Automation (Free)</h5>
+                            <p class="card-text" data-i18n="ebook1_desc">Explores automation fundamentals, tools, and techniques to optimize processes.</p>
+                            <a href="" download class="btn btn-tech" data-i18n="btn_unavailable">Unavailable</a>
                         </div>
                     </div>
                 </div>
@@ -891,13 +761,13 @@
                     <div class="ebook-card">
                         <a href="assets/ebook1_free.pdf" download>
                             <div class="card">
-                                <img src="assets/ebook1-cover.png" alt="Capa do E-book 1">
+                                <img src="assets/ebook1-cover.png" alt="Cover E-book 1">
                             </div>
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Primeiros Passos na Programação (Gratuito)</h5>
-                            <p class="card-text">Um guia introdutório para iniciantes em programação, cobrindo conceitos básicos e primeiros passos em linguagens populares.</p>
-                            <a href="assets/ebook1_free.pdf" download class="btn btn-tech">Baixar</a>
+                            <h5 class="card-title" data-i18n="ebook2_title">First Steps in Programming (Free)</h5>
+                            <p class="card-text" data-i18n="ebook2_desc">An introductory guide for programming beginners, covering basic concepts.</p>
+                            <a href="assets/ebook1_free.pdf" download class="btn btn-tech" data-i18n="btn_download">Download</a>
                         </div>
                     </div>
                 </div>
@@ -905,13 +775,13 @@
                     <div class="ebook-card">
                         <a href="assets/ebook3_free.pdf" target="_blank">
                             <div class="card">
-                                <img src="assets/ebook3-cover.png" alt="Capa do E-book 3">
+                                <img src="assets/ebook3-cover.png" alt="Cover E-book 3">
                             </div>
                         </a>
                         <div class="card-body">
-                            <h5 class="card-title">Desenvolvimento Full-Stack Avançado (Pago)</h5>
-                            <p class="card-text">Um guia avançado para desenvolvimento full-stack, cobrindo front-end, back-end e integração de APIs.</p>
-                            <a href="" target="_blank" class="btn btn-tech">Indisponível</a>
+                            <h5 class="card-title" data-i18n="ebook3_title">Advanced Full-Stack Dev (Paid)</h5>
+                            <p class="card-text" data-i18n="ebook3_desc">An advanced guide to full-stack development, covering front-end, back-end, and APIs.</p>
+                            <a href="" target="_blank" class="btn btn-tech" data-i18n="btn_unavailable">Unavailable</a>
                         </div>
                     </div>
                 </div>
@@ -921,7 +791,7 @@
 
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="section-title">Contato</h2>
+            <h2 class="section-title" data-i18n="section_contact">Contact</h2>
             <p class="text-center">
                 <a href="mailto:marcos.latino@gmail.com" class="contact-icons">
                     <i class="fas fa-envelope"></i><span>E-mail</span>
@@ -935,35 +805,268 @@
             </p>
             <form class="contact-form" action="https://formspree.io/f/xnnzrzgk" method="POST">
                 <input type="hidden" name="_replyto" value="email">
-                <input type="hidden" name="_subject" value="Nova Mensagem do Portfolio">
+                <input type="hidden" name="_subject" value="New Message from Portfolio">
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Seu Nome" required>
+                    <label for="name" class="form-label" data-i18n="form_name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" data-i18n-placeholder="ph_name" required>
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Seu Email" required>
+                    <label for="email" class="form-label" data-i18n="form_email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" data-i18n-placeholder="ph_email" required>
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Mensagem</label>
-                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Sua Mensagem" required></textarea>
+                    <label for="message" class="form-label" data-i18n="form_message">Message</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" data-i18n-placeholder="ph_message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-tech">Enviar</button>
+                <button type="submit" class="btn btn-tech" data-i18n="form_btn">Send</button>
                 <div id="form-message" class="text-center mt-3" style="display: none; color: #00fff7;">
-                    Mensagem enviada com sucesso! Entrarei em contato em breve.
+                    <span data-i18n="form_success">Message sent successfully! I will contact you soon.</span>
                 </div>
             </form>
         </div>
     </section>
 
     <footer class="text-center py-3">
-        <p>&copy; 2025 Marcos Henrique Edington Santos. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Marcos Henrique Edington Santos. <span data-i18n="footer_rights">All rights reserved.</span></p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-	
-	
+        // Translations Data
+        const translations = {
+            en: {
+                loading: "Loading...",
+                nav_about: "About Me",
+                nav_skills: "Skills",
+                nav_exp: "Experience",
+                nav_proj: "Projects",
+                nav_ebooks: "E-books",
+                nav_contact: "Contact",
+                hero_role: "Backend / Fullstack Software Developer | .NET, REST APIs, SQL | Real-Time Data & Mapping Solutions",
+                hero_btn: "View Projects",
+                section_about: "About Me",
+                about_p1: "Backend / Fullstack Software Developer with strong experience in backend systems, real-time data processing and data visualization.",
+                about_p2: "I design and build end-to-end solutions — from database modeling and REST APIs to interactive dashboards and geospatial visualization — focused on decision-making and operational efficiency.",
+                about_p3: "I am the author and main developer of strategic systems for traffic and urban mobility management, including:",
+                about_list: "<li>Real-time Traffic Operations Dashboard, developed from scratch with custom APIs, database integration and interactive frontend.</li><li>Google Maps-based visualization showing live traffic operations, checkpoints and incidents with detailed operational data.</li><li>Analytical dashboards with advanced filters (vehicle type, operation type, time range, infractions) and key indicators for management and planning.</li>",
+                about_p4: "I also developed a Traffic Violation Heatmap System for the municipality of Camaçari, using Google Maps Heatmap, enabling managers to identify high-incidence areas and support public policy and enforcement strategies.",
+                about_link_intro: "🔗 Official publication by the Municipality of Camaçari:",
+                about_p5: "Currently, I work at <strong>Grupo Recursos</strong>, developing systems for traffic authorities such as <strong>Transalvador</strong>, using technologies including .NET Core, Node.js, PL/SQL, JavaScript, Delphi, SQL Server, Oracle and Google Maps APIs.",
+                about_p6: "I have a strong analytical mindset and a data-driven approach, focused on transforming complex information into clear, actionable and strategic dashboards.",
+                resume_btn: "Resume",
+                resume_title: "Resume",
+                resume_mobile_text: "To view the resume in **screen-adapted size**, click the button below.",
+                resume_open: "Open Full Screen (Recommended)",
+                resume_download: "Download PDF",
+                section_skills: "Technical Skills",
+                skill_api: "REST API Creation (.NET)",
+                skill_db: "Database",
+                skill_plsql: "Advanced Oracle PL/SQL",
+                skill_rest: "REST API Consumption & Creation",
+                skill_summary: "+8 years of experience in development, deployment, and maintenance of critical systems",
+                section_exp: "Professional Experience",
+                job1_title: "Systems Developer",
+                job1_date: "Current (since 2022)",
+                
+                // --- CORREÇÃO AQUI (Uso de crase ` para múltiplas linhas) ---
+                job1_desc: `
+                    <p>Development of intelligent systems for urban traffic monitoring and management, supporting traffic authorities in Salvador, Camaçari and Maceió.</p>
+                    <p><strong>Key contributions:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>• Design and development of scalable backend systems and REST APIs for real-time traffic operations.</li>
+                        <li>• Implementation of geospatial solutions using Google Maps APIs (maps, markers, heatmaps).</li>
+                        <li>• Development of analytical dashboards and operational monitoring tools to support data-driven decision-making.</li>
+                        <li>• Integration with SQL Server and Oracle databases using optimized queries and PL/SQL.</li>
+                        <li>• Maintenance, refactoring and evolution of legacy systems using Delphi.</li>
+                    </ul>
+                    <p class="mt-2"><strong>Technologies:</strong> .NET Core, C#, Node.js, JavaScript, SQL Server, Oracle, PL/SQL, Delphi, Google Maps APIs.</p>
+                `, 
+                // --- FIM DA CORREÇÃO ---
+
+                job2_title: "Developer",
+                job2_desc: "<li>• Development with **Delphi, C# .NET Core and PL/SQL** for traffic management.</li>",
+                job3_title: "Support Analyst / Developer",
+                job3_desc: "<li>• Technical support and development projects in partnership.</li>",
+                job4_title: "Systems Analyst Jr II",
+                job4_desc: "<li>• 3-month project: requirements gathering, testing, and documentation.</li><li>• Experience with **Toad, SQL Developer, TortoiseSVN**, and OTRS.</li>",
+                job5_title: "Developer",
+                job5_desc: "<li>• Development of **complex PL/SQL scripts** (Oracle) for critical data correction.</li><li>• Creation of financial and management reports using **Crystal Reports**.</li><li>• Automation of support processes in a retail environment.</li>",
+                job6_title: "Support Analyst III",
+                job6_desc: "<li>• Critical incident management during corporate merger.</li><li>• Implementation of the MVLOJAS system and optimization of inventory/sales.</li>",
+                job7_title: "Support Technician / Developer",
+                job7_desc: "<li>• Helpdesk, system maintenance, and development.</li><li>• Linguagens-chave: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li><li>• Bancos: Oracle, Access. Ferramentas: Toad, **Crystal Reports**.</li>",
+                job8_title: "IT Instructor",
+                job8_desc: "<li>• 'Educar para Crescer' Project.</li>",
+                job9_title: "Operational Support Technician II",
+                job9_desc: "<li>• Helpdesk attendance and technical support.</li>",
+                job10_title: "Support Tech / Web Designer",
+                job10_desc: "<li>• Computer maintenance and helpdesk (Project Somar).</li><li>• Creation of the support website for SEC-BA.</li>",
+                job11_title: "IT Technician",
+                job11_desc: "<li>• Participation in Project Matrícula 2001 – SOMAR.</li>",
+                section_projects: "Projects",
+                proj_viva_desc: "Developed from scratch, VivaCondo is an Android app for condominium management. Features include:<br>- <strong>Visitor Management</strong>: Entry control.<br>- <strong>Access Release</strong>: Secure authorization for guests.<br>- <strong>Space Booking</strong>: Scheduling common areas with PIX/Boleto payment.<br>- <strong>Announcements</strong>: Internal communication.<br>- <strong>Pet Registry</strong>: Management of pet info.<br>- <strong>Assemblies & Minutes</strong>: Meeting organization.<br>- <strong>Financial</strong>: Payment history and duplicate bills.<br>Designed to optimize processes and promote transparency.",
+                proj_elevator_title: "Elevator Indoor Media System",
+                proj_elevator_desc: "Implemented at Vivendas do Rio, this indoor media system for elevators offers a dynamic platform designed to engage residents. The solution displays resident ads, external advertisements, administration notices, lottery results, and entertainment news. Optimized for the compact elevator environment, ensuring usability and visual impact.",
+                proj_heatmap_title: "Infraction Heatmap - SMTTP",
+                proj_heatmap_desc: "Development of a traffic heat map for transport management, which became a product and generated a contract. Allows real-time monitoring of occurrences and statistics, optimizing strategic decisions.",
+                official_site: "Official Site",
+                ebooks_intro: "Check out my self-authored e-books! I offer some free copies and other paid ones, covering topics such as introduction to programming, technology, automation, and software development. Click on the covers below to download or purchase.",
+                ebook1_title: "Intro to Automation (Free)",
+                ebook1_desc: "Explores automation fundamentals, tools, and techniques to optimize processes.",
+                btn_unavailable: "Unavailable",
+                ebook2_title: "First Steps in Programming (Free)",
+                ebook2_desc: "An introductory guide for programming beginners, covering basic concepts.",
+                btn_download: "Download",
+                ebook3_title: "Advanced Full-Stack Dev (Paid)",
+                ebook3_desc: "An advanced guide to full-stack development, covering front-end, back-end, and APIs.",
+                section_contact: "Contact",
+                form_name: "Name",
+                ph_name: "Your Name",
+                form_email: "Email",
+                ph_email: "Your Email",
+                form_message: "Message",
+                ph_message: "Your Message",
+                form_btn: "Send",
+                form_success: "Message sent successfully! I will contact you soon.",
+                footer_rights: "All rights reserved."
+            },
+            pt: {
+                loading: "Carregando...",
+                nav_about: "Sobre Mim",
+                nav_skills: "Habilidades",
+                nav_exp: "Experiência",
+                nav_proj: "Projetos",
+                nav_ebooks: "E-books",
+                nav_contact: "Contato",
+                hero_role: "Desenvolvedor Backend / Fullstack | .NET, APIs REST, SQL | Soluções de Mapeamento e Dados em Tempo Real",
+                hero_btn: "Ver Projetos",
+                section_about: "Sobre Mim",
+                about_p1: "Desenvolvedor de Software Backend / Fullstack com sólida experiência em sistemas backend, processamento de dados em tempo real e visualização de dados.",
+                about_p2: "Projeto e construo soluções de ponta a ponta — desde a modelagem de banco de dados e APIs REST até dashboards interativos e visualização geoespacial — focadas na tomada de decisão e eficiência operacional.",
+                about_p3: "Sou autor e principal desenvolvedor de sistemas estratégicos para gestão de trânsito e mobilidade urbana, incluindo:",
+                about_list: "<li>Dashboard de Operações de Trânsito em tempo real, desenvolvido do zero com APIs personalizadas, integração de banco de dados e frontend interativo.</li><li>Visualização baseada no Google Maps mostrando operações de trânsito ao vivo, pontos de controle e incidentes com dados operacionais detalhados.</li><li>Dashboards analíticos com filtros avançados (tipo de veículo, tipo de operação, período, infrações) e indicadores-chave para gestão e planejamento.</li>",
+                about_p4: "Também desenvolvi um Sistema de Mapa de Calor de Infrações de Trânsito para o município de Camaçari, utilizando Google Maps Heatmap, permitindo aos gestores identificar áreas de alta incidência e apoiar políticas públicas e estratégias de fiscalização.",
+                about_link_intro: "🔗 Publicação oficial da Prefeitura de Camaçari:",
+                about_p5: "Atualmente, atuo no <strong>Grupo Recursos</strong>, desenvolvendo sistemas para órgãos de trânsito como a <strong>Transalvador</strong>, utilizando tecnologias como .NET Core, Node.js, PL/SQL, JavaScript, Delphi, SQL Server, Oracle e Google Maps APIs.",
+                about_p6: "Tenho um forte perfil analítico e uma abordagem orientada a dados, focado em transformar informações complexas em dashboards claros, acionáveis e estratégicos.",
+                resume_btn: "Currículo",
+                resume_title: "Currículo",
+                resume_mobile_text: "Para visualizar o currículo em **tamanho adaptado à tela** (sem rolagem lateral), clique no botão abaixo.",
+                resume_open: "Abrir em Tela Cheia (Recomendado)",
+                resume_download: "Baixar PDF",
+                section_skills: "Competências Técnicas",
+                skill_api: "Criação de APIs REST próprias (.NET)",
+                skill_db: "Banco de Dados",
+                skill_plsql: "Oracle PL/SQL Avançado",
+                skill_rest: "Consumo e criação de APIs REST",
+                skill_summary: "+8 anos de experiência em desenvolvimento, implantação e manutenção de sistemas críticos",
+                section_exp: "Experiência Profissional",
+                job1_title: "Desenvolvedor de Sistemas",
+                job1_date: "Atual (desde 2022)",
+                
+                // --- VERSÃO PT ATUALIZADA (Para manter consistência) ---
+                job1_desc: `
+                    <p>Desenvolvimento de sistemas inteligentes para monitoramento e gestão de tráfego urbano, atendendo órgãos de trânsito em Salvador, Camaçari e Maceió.</p>
+                    <p><strong>Principais contribuições:</strong></p>
+                    <ul class="list-unstyled">
+                        <li>• Design e desenvolvimento de sistemas backend escaláveis e APIs REST para operações de trânsito em tempo real.</li>
+                        <li>• Implementação de soluções geoespaciais usando Google Maps APIs (mapas, marcadores, mapas de calor).</li>
+                        <li>• Desenvolvimento de dashboards analíticos e ferramentas de monitoramento operacional para apoio à tomada de decisão baseada em dados.</li>
+                        <li>• Integração com bancos de dados SQL Server e Oracle utilizando queries otimizadas e PL/SQL.</li>
+                        <li>• Manutenção, refatoração e evolução de sistemas legados utilizando Delphi.</li>
+                    </ul>
+                    <p class="mt-2"><strong>Tecnologias:</strong> .NET Core, C#, Node.js, JavaScript, SQL Server, Oracle, PL/SQL, Delphi, Google Maps APIs.</p>
+                `,
+                // --- FIM DA VERSÃO PT ---
+
+                job2_title: "Desenvolvedor",
+                job2_desc: "<li>• Desenvolvimento com **Delphi, C# .NET Core e PL/SQL** para gestão de trânsito.</li>",
+                job3_title: "Analista de Suporte / Desenvolvedor",
+                job3_desc: "<li>• Projetos de desenvolvimento e suporte técnico em parceria.</li>",
+                job4_title: "Analista de Sistemas Jr II",
+                job4_desc: "<li>• Projeto de 3 meses: levantamento de requisitos, testes e documentação.</li><li>• Experiência com **Toad, SQL Developer, TortoiseSVN** e OTRS.</li>",
+                job5_title: "Desenvolvedor",
+                job5_desc: "<li>• Desenvolvimento de **Scripts PL/SQL complexos** (Oracle) para correção de dados críticos.</li><li>• Criação de relatórios financeiros e gerenciais utilizando **Crystal Reports**.</li><li>• Automação de processos de suporte em ambiente de varejo.</li>",
+                job6_title: "Analista de Suporte Pleno III",
+                job6_desc: "<li>• Gerenciamento de incidentes críticos durante fusão empresarial.</li><li>• Implantação do sistema MVLOJAS e otimização de estoque/vendas.</li>",
+                job7_title: "Técnico de Suporte / Desenvolvedor",
+                job7_desc: "<li>• Helpdesk, manutenção de sistemas e desenvolvimento.</li><li>• Linguagens-chave: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li><li>• Bancos: Oracle, Access. Ferramentas: Toad, **Crystal Reports**.</li>",
+                job8_title: "Instrutor de Informática",
+                job8_desc: "<li>• Projeto Educar para Crescer (outro turno).</li>",
+                job9_title: "Técnico de Suporte Operacional II",
+                job9_desc: "<li>• Atendimento de Helpdesk e suporte técnico.</li>",
+                job10_title: "Técnico de Suporte / Web Designer",
+                job10_desc: "<li>• Manutenção de computadores e helpdesk (Projeto Somar).</li><li>• Criação do site de suporte da SEC-BA.</li>",
+                job11_title: "Técnico em Informática",
+                job11_desc: "<li>• Participação no Projeto Matrícula 2001 – SOMAR.</li>",
+                section_projects: "Projetos",
+                proj_viva_desc: "Desenvolvido do zero, o VivaCondo é um aplicativo Android para gestão condominial, projetado para simplificar e modernizar a administração de condomínios. Funcionalidades:<br>- <strong>Gestão de Visitantes</strong>: Registro e controle de entrada.<br>- <strong>Liberação de Acessos</strong>: Autorização segura.<br>- <strong>Reserva de Espaços</strong>: Pagamento via PIX/Boleto.<br>- <strong>Anúncios de Moradores</strong>: Cadastro e divulgação.<br>- <strong>Registro de Pets</strong>.<br>- <strong>Assembleias e Atas</strong>.<br>- <strong>Financeiro</strong>.<br>Projetado para otimizar processos e promover transparência.",
+                proj_elevator_title: "Sistema de Mídia Indoor para Elevadores",
+                proj_elevator_desc: "Implantado no condomínio Vivendas do Rio, o sistema de mídia indoor para elevadores oferece uma plataforma dinâmica e interativa, projetada para engajar moradores com conteúdos variados. A solução exibe anúncios de moradores, propagandas externas, comunicados da administração, avisos importantes, resultados de loterias e novidades. Interface otimizada para o ambiente compacto de elevadores.",
+                proj_heatmap_title: "Mapa de Calor de Infrações - SMTTP",
+                proj_heatmap_desc: "Desenvolvimento de um mapa de calor para gestão de trânsito e transporte, que virou produto e gerou contrato. Permite monitoramento em tempo real de ocorrências e estatísticas, otimizando decisões estratégicas.",
+                official_site: "Site Oficial",
+                ebooks_intro: "Confira meus e-books de autoria própria! Disponibilizo alguns exemplares gratuitamente e outros pagos, abordando temas como introdução à programação, tecnologia, automação e desenvolvimento de software. Clique nas capas abaixo para fazer o download ou adquirir.",
+                ebook1_title: "Introdução à Automação (Gratuito)",
+                ebook1_desc: "Explora os fundamentos da automação, incluindo ferramentas e técnicas para otimizar processos.",
+                btn_unavailable: "Indisponível",
+                ebook2_title: "Primeiros Passos na Programação (Gratuito)",
+                ebook2_desc: "Um guia introdutório para iniciantes em programação, cobrindo conceitos básicos e primeiros passos em linguagens populares.",
+                btn_download: "Baixar",
+                ebook3_title: "Desenvolvimento Full-Stack Avançado (Pago)",
+                ebook3_desc: "Um guia avançado para desenvolvimento full-stack, cobrindo front-end, back-end e integração de APIs.",
+                section_contact: "Contato",
+                form_name: "Nome",
+                ph_name: "Seu Nome",
+                form_email: "Email",
+                ph_email: "Seu Email",
+                form_message: "Mensagem",
+                ph_message: "Sua Mensagem",
+                form_btn: "Enviar",
+                form_success: "Mensagem enviada com sucesso! Entrarei em contato em breve.",
+                footer_rights: "Todos os direitos reservados."
+            }
+        };
+
+        // Language State
+        let currentLang = 'en';
+
+        // Function to Toggle Language
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'pt' : 'en';
+            updateContent();
+            updateButton();
+        }
+
+        // Update Content based on currentLang
+        function updateContent() {
+            // Update innerHTML
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    element.innerHTML = translations[currentLang][key];
+                }
+            });
+
+            // Update Placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (translations[currentLang][key]) {
+                    element.placeholder = translations[currentLang][key];
+                }
+            });
+            
+            // Update HTML Lang tag
+            document.documentElement.lang = currentLang;
+        }
+
+        // Update Button Text
+        function updateButton() {
+            const label = document.getElementById('lang-label');
+            // Show the OPPOSITE language as the option to click
+            label.textContent = currentLang === 'en' ? 'PT' : 'EN';
+        }
+
         // Preloader
         const preloader = document.getElementById('preloader');
         setTimeout(() => {
@@ -974,7 +1077,8 @@
         document.querySelectorAll('a.nav-link').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
             });
@@ -983,9 +1087,18 @@
         // Form submission feedback
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
             setTimeout(() => {
-                document.getElementById('form-message').style.display = 'block';
+                const msgElement = document.getElementById('form-message');
+                msgElement.style.display = 'block';
+                // Ensure message is in correct language
+                msgElement.innerText = translations[currentLang]['form_success'];
                 this.reset();
             }, 1000);
+        });
+
+        // Initialize (English Default)
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent();
+            updateButton();
         });
     </script>
 </body>
