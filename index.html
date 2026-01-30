@@ -346,7 +346,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a></li>
                     <li class="nav-item">
                         <button id="lang-toggle" class="btn btn-sm btn-lang" onclick="toggleLanguage()">
-                            <i class="fas fa-globe"></i> <span id="lang-label">PT</span>
+                            <i class="fas fa-globe"></i> <span id="lang-label">Português</span>
                         </button>
                     </li>
                 </ul>
@@ -1107,7 +1107,8 @@
         function updateButton() {
             const label = document.getElementById('lang-label');
             // Show the OPPOSITE language as the option to click
-            label.textContent = currentLang === 'en' ? 'PT' : 'EN';
+           // label.textContent = currentLang === 'en' ? 'PT' : 'EN';
+			label.textContent = currentLang === 'en' ? 'Português' : 'Inglês';
         }
 
         // Preloader
