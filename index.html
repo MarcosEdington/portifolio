@@ -25,6 +25,19 @@
             /* Desenha os 3 tracinhos na cor Cyan */
             background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 255, 247, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
         }
+		/* Botão Estilo Neon/Cyberpunk */
+        .btn-outline-cyan {
+            border: 1px solid #00fff7;
+            color: #00fff7;
+            background: transparent;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+        }
+        .btn-outline-cyan:hover {
+            background: #00fff7;
+            color: #0a0f19;
+            box-shadow: 0 0 15px #00fff7;
+        }
         /* Preloader */
         #preloader {
             position: fixed;
@@ -513,6 +526,7 @@
     <section id="experience" class="py-5">
         <div class="container">
             <h2 class="section-title" data-i18n="section_exp">Professional Experience</h2>
+            
             <div class="row g-4"> 
                 
                 <div class="col-md-12">
@@ -520,7 +534,7 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
                                 <i class="fas fa-code me-2" style="color: #00fff7;"></i><span data-i18n="job1_title">Systems Developer</span>
-                                <small class="text-cyan float-end" data-i18n="job1_date">Current (since 2026)</small>
+                                <small class="text-cyan float-end" data-i18n="job1_date">Current (since 2022)</small>
                             </h5>
                             <p class="mb-2"><strong>Grupo Recursos</strong></p>
                             <div class="mt-auto small" data-i18n="job1_desc"></div>
@@ -536,9 +550,7 @@
                                 <small class="text-cyan float-end">2020 – 2022</small>
                             </h5>
                             <p class="mb-2"><strong>Grupo Recursos</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job2_desc">
-                                <li>• Development with **Delphi, C# .NET Core and PL/SQL** for traffic management.</li>
-                            </ul>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job2_desc"></ul>
                         </div>
                     </div>
                 </div>
@@ -551,24 +563,7 @@
                                 <small class="text-cyan float-end">2018 – 2020</small>
                             </h5>
                             <p class="mb-2"><strong>SMART.COM (Partnership)</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job3_desc">
-                                <li>• Technical support and development projects in partnership.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-               <div class="col-md-12">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-2">
-                                <i class="fas fa-laptop-code me-2" style="color: #00fff7;"></i><span data-i18n="job4_title">Systems Analyst Jr II</span>
-                                <small class="text-cyan float-end">2017</small>
-                            </h5>
-                            <p class="mb-2"><strong>ALZ Tecnologia (Ricardo Eletro)</strong></p>
-                            
-                            <div class="mt-auto small" data-i18n="job4_desc">
-                                </div>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job3_desc"></ul>
                         </div>
                     </div>
                 </div>
@@ -577,111 +572,117 @@
                     <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
-                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i><span data-i18n="job5_title">Developer</span>
-                                <small class="text-cyan float-end">2015 – 2016</small>
+                                <i class="fas fa-laptop-code me-2" style="color: #00fff7;"></i><span data-i18n="job4_title">Systems Analyst Jr II</span>
+                                <small class="text-cyan float-end">2017</small>
                             </h5>
-                            <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job5_desc">
-                                <li>• Development of **complex PL/SQL scripts** (Oracle) for critical data correction.</li>
-                                <li>• Creation of financial and management reports using **Crystal Reports**.</li>
-                                <li>• Automation of support processes in a retail environment.</li>
-                            </ul>
+                            <p class="mb-2"><strong>ALZ Tecnologia (Ricardo Eletro)</strong></p>
+                            <div class="mt-auto small" data-i18n="job4_desc"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-12"> <div class="card h-100">
+                <div class="col-md-6">
+                    <div class="card h-100">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title mb-2">
+                                <i class="fas fa-code-branch me-2" style="color: #00fff7;"></i><span data-i18n="job5_title">Developer</span>
+                                <small class="text-cyan float-end">2015 – 2016</small>
+                            </h5>
+                            <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
+                            <ul class="list-unstyled mt-auto small" data-i18n="job5_desc"></ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="card h-100">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title mb-2">
                                 <i class="fas fa-user-tie me-2" style="color: #00fff7;"></i><span data-i18n="job6_title">Support Analyst III</span>
                                 <small class="text-cyan float-end">2014 – 2015</small>
                             </h5>
                             <p class="mb-2"><strong>Softbox (Ricardo Eletro)</strong></p>
-                            
-                            <div class="mt-auto small" data-i18n="job6_desc">
-                                </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-2">
-                                <i class="fas fa-tools me-2" style="color: #00fff7;"></i><span data-i18n="job7_title">Support Technician / Developer</span>
-                                <small class="text-cyan float-end">2006 – 2014</small>
-                            </h5>
-                            <p class="mb-2"><strong>AVANSYS (Education Dept.)</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job7_desc">
-                                <li>• Helpdesk, system maintenance, and development.</li>
-                                <li>• Key languages: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li>
-                                <li>• Databases: Oracle, Access. Tools: Toad, **Crystal Reports**.</li>
-                            </ul>
+                            <div class="mt-auto small" data-i18n="job6_desc"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-6">
-					<div class="card h-100">
-						<div class="card-body d-flex flex-column">
-							<h5 class="card-title mb-2">
-								<i class="fas fa-chalkboard-teacher me-2" style="color: #00fff7;"></i><span data-i18n="job8_title">IT Instructor</span>
-								<small class="text-cyan float-end">2006 – 2007</small>
-							</h5>
-							<p class="mb-2"><strong>STEFANINI</strong></p>
-							<ul class="list-unstyled mt-auto small" data-i18n="job8_desc">
-								 </ul>
-						</div>
-					</div>
-				</div>
-
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-2">
-                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job9_title">Operational Support Technician II</span>
-                                <small class="text-cyan float-end">2005</small>
-                            </h5>
-                            <p class="mb-2"><strong>NETRA (Education Dept.)</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job9_desc">
-                                <li>• Helpdesk attendance and technical support.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-2">
-                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job10_title">Support Tech / Web Designer</span>
-                                <small class="text-cyan float-end">2001 – 2005</small>
-                            </h5>
-                            <p class="mb-2"><strong>Instituto Miguel Calmon</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job10_desc">
-                                <li>• Computer maintenance and helpdesk (Project Somar).</li>
-                                <li>• Creation of the support website for SEC-BA.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title mb-2">
-                                <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job11_title">IT Technician</span>
-                                <small class="text-cyan float-end">2001</small>
-                            </h5>
-                            <p class="mb-2"><strong>UNITECH (Education Dept.)</strong></p>
-                            <ul class="list-unstyled mt-auto small" data-i18n="job11_desc">
-                                <li>• Participation in Project Matrícula 2001 – SOMAR.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+            </div> <div class="text-center mt-4 position-relative">
+                <hr style="border-color: #00fff7; opacity: 0.3; margin-bottom: 30px;">
+                <button class="btn btn-outline-cyan px-4 py-2" type="button" data-bs-toggle="collapse" data-bs-target="#earlyCareer" aria-expanded="false" aria-controls="earlyCareer" id="btn-career-toggle">
+                    <i class="fas fa-history me-2"></i> <span data-i18n="btn_early_career">View Career Start (2001-2014)</span>
+                </button>
             </div>
+
+            <div class="collapse" id="earlyCareer">
+                <div class="row g-4 mt-2">
+                    
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-2">
+                                    <i class="fas fa-tools me-2" style="color: #00fff7;"></i><span data-i18n="job7_title">Support Technician / Developer</span>
+                                    <small class="text-cyan float-end">2006 – 2014</small>
+                                </h5>
+                                <p class="mb-2"><strong>AVANSYS (Education Dept.)</strong></p>
+                                <ul class="list-unstyled mt-auto small" data-i18n="job7_desc"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-2">
+                                    <i class="fas fa-chalkboard-teacher me-2" style="color: #00fff7;"></i><span data-i18n="job8_title">IT Instructor</span>
+                                    <small class="text-cyan float-end">2006 – 2007</small>
+                                </h5>
+                                <p class="mb-2"><strong>STEFANINI</strong></p>
+                                <ul class="list-unstyled mt-auto small" data-i18n="job8_desc"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-2">
+                                    <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job9_title">Operational Support Technician II</span>
+                                    <small class="text-cyan float-end">2005</small>
+                                </h5>
+                                <p class="mb-2"><strong>NETRA (Education Dept.)</strong></p>
+                                <ul class="list-unstyled mt-auto small" data-i18n="job9_desc"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-2">
+                                    <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job10_title">Support Tech / Web Designer</span>
+                                    <small class="text-cyan float-end">2001 – 2005</small>
+                                </h5>
+                                <p class="mb-2"><strong>Instituto Miguel Calmon</strong></p>
+                                <ul class="list-unstyled mt-auto small" data-i18n="job10_desc"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title mb-2">
+                                    <i class="fas fa-desktop me-2" style="color: #00fff7;"></i><span data-i18n="job11_title">IT Technician</span>
+                                    <small class="text-cyan float-end">2001</small>
+                                </h5>
+                                <p class="mb-2"><strong>UNITECH (Education Dept.)</strong></p>
+                                <ul class="list-unstyled mt-auto small" data-i18n="job11_desc"></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> </div>
         </div>
     </section>
     <section id="projects" class="py-5">
@@ -840,6 +841,7 @@
         // Translations Data
         const translations = {
             en: {
+			    btn_early_career: "View Career Start (2001-2014)",
                 loading: "Loading...",
                 nav_about: "About Me",
                 nav_skills: "Skills",
@@ -955,6 +957,7 @@
                 footer_rights: "All rights reserved."
             },
             pt: {
+			    btn_early_career: "Ver Início de Carreira (2001-2014)",
                 loading: "Carregando...",
                 nav_about: "Sobre Mim",
                 nav_skills: "Habilidades",
@@ -1107,8 +1110,7 @@
         function updateButton() {
             const label = document.getElementById('lang-label');
             // Show the OPPOSITE language as the option to click
-           // label.textContent = currentLang === 'en' ? 'PT' : 'EN';
-			label.textContent = currentLang === 'en' ? 'Português' : 'Inglês';
+            label.textContent = currentLang === 'en' ? 'Português' : 'Inglês';
         }
 
         // Preloader
