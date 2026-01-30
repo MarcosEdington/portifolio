@@ -16,28 +16,6 @@
             position: relative;
             margin: 0;
         }
-		/* Correção do Menu Hamburger para Neon (Cyan) */
-        .navbar-toggler {
-            border-color: #00fff7 !important; /* Borda Neon */
-            box-shadow: 0 0 5px #00fff7; /* Brilho suave */
-        }
-        .navbar-toggler-icon {
-            /* Desenha os 3 tracinhos na cor Cyan */
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 255, 247, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-        }
-		/* Botão Estilo Neon/Cyberpunk */
-        .btn-outline-cyan {
-            border: 1px solid #00fff7;
-            color: #00fff7;
-            background: transparent;
-            font-family: 'Orbitron', sans-serif;
-            transition: all 0.3s ease;
-        }
-        .btn-outline-cyan:hover {
-            background: #00fff7;
-            color: #0a0f19;
-            box-shadow: 0 0 15px #00fff7;
-        }
         /* Preloader */
         #preloader {
             position: fixed;
@@ -68,6 +46,7 @@
             50% { transform: scale(1.1); opacity: 0.7; }
             100% { transform: scale(1); opacity: 1; }
         }
+        
         /* Navbar */
         .navbar {
             background: rgba(0, 0, 0, 0.8);
@@ -88,6 +67,16 @@
         .nav-link:hover {
             color: #00fff7 !important;
         }
+
+        /* Correção do Menu Hamburger para Neon (Cyan) */
+        .navbar-toggler {
+            border-color: #00fff7 !important;
+            box-shadow: 0 0 5px #00fff7;
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 255, 247, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+
         /* Language Button */
         .btn-lang {
             border: 1px solid #00fff7;
@@ -102,6 +91,24 @@
             background: #00fff7;
             color: #000;
             box-shadow: 0 0 10px #00fff7;
+        }
+
+        /* Botões Estilo Neon (Usado no GitHub e Carreira) */
+        .btn-outline-cyan {
+            border: 2px solid #00fff7;
+            color: #00fff7;
+            background: transparent;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .btn-outline-cyan:hover {
+            background-color: #00fff7;
+            color: #0b0f19;
+            box-shadow: 0 0 20px #00fff7;
+            transform: scale(1.05);
         }
 
         /* Hero Section */
@@ -359,7 +366,7 @@
                     <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a></li>
                     <li class="nav-item">
                         <button id="lang-toggle" class="btn btn-sm btn-lang" onclick="toggleLanguage()">
-                            <i class="fas fa-globe"></i> <span id="lang-label">Português</span>
+                            <i class="fas fa-globe"></i> <span id="lang-label">PT</span>
                         </button>
                     </li>
                 </ul>
@@ -367,7 +374,7 @@
         </div>
     </nav>
 
-  <section id="home" class="hero-section">
+   <section id="home" class="hero-section">
 		<div class="container">
 			<h1 class="fade-in">Marcos Henrique Edington Santos</h1>
 			
@@ -390,25 +397,14 @@
             <h2 class="section-title" data-i18n="section_about">About Me</h2>
             <div class="row">
                 <div class="col-md-8 offset-md-2">
-
-                    <p data-i18n="about_p1">
-                        Backend / Fullstack Software Developer with strong experience in backend systems, real-time data processing and data visualization.
-                    </p>
-
-                    <p data-i18n="about_p2">
-                        I design and build end-to-end solutions — from database modeling and REST APIs to interactive dashboards and geospatial visualization — focused on decision-making and operational efficiency.
-                    </p>
-
-                    <p data-i18n="about_p3">
-                        I am the author and main developer of strategic systems for traffic and urban mobility management, including:
-                    </p>
-
+                    <p data-i18n="about_p1">Backend / Fullstack Software Developer with strong experience in backend systems, real-time data processing and data visualization.</p>
+                    <p data-i18n="about_p2">I design and build end-to-end solutions — from database modeling and REST APIs to interactive dashboards and geospatial visualization — focused on decision-making and operational efficiency.</p>
+                    <p data-i18n="about_p3">I am the author and main developer of strategic systems for traffic and urban mobility management, including:</p>
                     <ul data-i18n="about_list">
                         <li>Real-time Traffic Operations Dashboard, developed from scratch with custom APIs, database integration and interactive frontend.</li>
                         <li>Google Maps-based visualization showing live traffic operations, checkpoints and incidents with detailed operational data.</li>
                         <li>Analytical dashboards with advanced filters (vehicle type, operation type, time range, infractions) and key indicators for management and planning.</li>
                     </ul>
-
                     <p>
                         <span data-i18n="about_p4">I also developed a Traffic Violation Heatmap System for the municipality of Camaçari, using Google Maps Heatmap, enabling managers to identify high-incidence areas and support public policy and enforcement strategies.</span>
                         <br>
@@ -417,15 +413,9 @@
                             https://www.camacari.ba.gov.br/stt-implanta-mapa-de-calor-de-infracoes-para-gestao-de-transito-e-transporte/
                         </a>
                     </p>
-
-                    <p data-i18n="about_p5">
-                        Currently, I work at <strong>Grupo Recursos</strong>, developing systems for traffic authorities such as <strong>Transalvador</strong>, using technologies including .NET Core, Node.js, PL/SQL, JavaScript, Delphi, SQL Server, Oracle and Google Maps APIs.
-                    </p>
-
-                    <p data-i18n="about_p6">
-                        I have a strong analytical mindset and a data-driven approach, focused on transforming complex information into clear, actionable and strategic dashboards.
-                    </p>
-
+                    <p data-i18n="about_p5">Currently, I work at <strong>Grupo Recursos</strong>, developing systems for traffic authorities such as <strong>Transalvador</strong>, using technologies including .NET Core, Node.js, PL/SQL, JavaScript, Delphi, SQL Server, Oracle and Google Maps APIs.</p>
+                    <p data-i18n="about_p6">I have a strong analytical mindset and a data-driven approach, focused on transforming complex information into clear, actionable and strategic dashboards.</p>
+                    
                     <p class="text-center mt-4">
                         <a href="https://www.linkedin.com/in/marcosedington/" target="_blank" class="contact-icons">
                             <i class="fab fa-linkedin"></i><span>LinkedIn</span>
@@ -434,12 +424,10 @@
                             <i class="fas fa-file-alt"></i><span data-i18n="resume_btn">Resume</span>
                         </a>
                     </p>
-
                 </div>
             </div>
         </div>
     </section>
-
 
    <div class="modal fade" id="resumeModal" tabindex="-1" aria-labelledby="resumeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -452,10 +440,9 @@
             </div>
             
             <div class="modal-body p-1" style="height: 85vh;">
-                
                 <div class="d-none d-sm-block" style="width: 100%; height: 100%;">
                     <iframe 
-                        src="assets/curriculomarcosedington.pdf" 
+                        src="assets/curriculo_en.pdf" 
                         style="width: 100%; height: 100%; border: none; background-color: white;" 
                         title="Resume PDF Viewer"
                         loading="lazy">
@@ -463,20 +450,17 @@
                 </div>
                 
                 <div class="d-block d-sm-none d-flex flex-column justify-content-center align-items-center text-center p-4" style="height: 100%;">
-                    
                     <p class="lead text-dark" data-i18n="resume_mobile_text">
                         To view the resume in **screen-adapted size**, click the button below.
                     </p>
-                    
-                    <a href="assets/curriculomarcosedington.pdf" target="_blank" class="btn btn-primary btn-lg mt-3">
+                    <a href="assets/curriculo_en.pdf" target="_blank" class="btn btn-primary btn-lg mt-3">
                         <i class="fas fa-external-link-alt me-2"></i> <span data-i18n="resume_open">Open Full Screen</span>
                     </a>
-                    
                 </div>
             </div>
             
             <div class="modal-footer">
-                <a href="assets/curriculomarcosedington.pdf" download class="btn btn-download" data-i18n="resume_download">Download PDF</a>
+                <a href="assets/curriculo_en.pdf" download class="btn btn-download" data-i18n="resume_download">Download PDF</a>
             </div>
         </div>
     </div>
@@ -685,6 +669,7 @@
                 </div> </div>
         </div>
     </section>
+
     <section id="projects" class="py-5">
         <div class="container">
             <h2 class="section-title" data-i18n="section_projects">Projects</h2>
@@ -693,17 +678,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title">VivaCondo App</h5>
-                            <p class="card-text" data-i18n="proj_viva_desc">
-                                Developed from scratch, VivaCondo is an Android app for condominium management. Features include:<br>
-                                - <strong>Visitor Management</strong>: Entry control.<br>
-                                - <strong>Access Release</strong>: Secure authorization for guests.<br>
-                                - <strong>Space Booking</strong>: Scheduling common areas with PIX/Boleto payment.<br>
-                                - <strong>Announcements</strong>: Internal communication.<br>
-                                - <strong>Pet Registry</strong>: Management of pet info.<br>
-                                - <strong>Assemblies & Minutes</strong>: Meeting organization.<br>
-                                - <strong>Financial</strong>: Payment history and duplicate bills.<br>
-                                Designed to optimize processes and promote transparency.
-                            </p>
+                            <p class="card-text" data-i18n="proj_viva_desc">Developed from scratch, VivaCondo is an Android app for condominium management.</p>
                         </div>
                     </div>
                 </div>
@@ -711,9 +686,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <h5 class="card-title" data-i18n="proj_elevator_title">Elevator Indoor Media System</h5>
-                            <p class="card-text" data-i18n="proj_elevator_desc">
-                                Implemented at Vivendas do Rio, this indoor media system for elevators offers a dynamic platform designed to engage residents. The solution displays resident ads, external advertisements, administration notices, lottery results, and entertainment news. Optimized for the compact elevator environment, ensuring usability and visual impact.
-                            </p>
+                            <p class="card-text" data-i18n="proj_elevator_desc">Implemented at Vivendas do Rio, this indoor media system for elevators offers a dynamic platform designed to engage residents.</p>
                             <div class="project-gallery d-flex flex-wrap justify-content-center">
                                 <img src="assets/placeholder-image-elevador1.jpg" alt="Elevator Photo 1" class="m-2">
                                 <img src="assets/placeholder-image-elevador2.jpg" alt="Elevator Photo 2" class="m-2">
@@ -737,6 +710,16 @@
                     </div>
                 </div>
             </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h4 class="mb-4" style="color: #e0e0e0;" data-i18n="github_title">Want to see my code structure?</h4>
+                    <a href="https://github.com/SEU_USUARIO" target="_blank" class="btn btn-outline-cyan btn-lg px-5">
+                        <i class="fab fa-github me-2"></i> <span data-i18n="github_btn">Access my GitHub Profile</span>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -841,7 +824,6 @@
         // Translations Data
         const translations = {
             en: {
-			    btn_early_career: "View Career Start (2001-2014)",
                 loading: "Loading...",
                 nav_about: "About Me",
                 nav_skills: "Skills",
@@ -873,9 +855,7 @@
                 skill_summary: "+8 years of experience in development, deployment, and maintenance of critical systems",
                 section_exp: "Professional Experience",
                 job1_title: "Systems Developer",
-                job1_date: "Current (since 2026)",
-                
-                // --- CORREÇÃO AQUI (Uso de crase ` para múltiplas linhas) ---
+                job1_date: "Current (since 2022)",
                 job1_desc: `
                     <p>Development of intelligent systems for urban traffic monitoring and management, supporting traffic authorities in Salvador, Camaçari and Maceió.</p>
                     <p><strong>Key contributions:</strong></p>
@@ -888,8 +868,6 @@
                     </ul>
                     <p class="mt-2"><strong>Technologies:</strong> .NET Core, C#, Node.js, JavaScript, SQL Server, Oracle, PL/SQL, Delphi, Google Maps APIs.</p>
                 `, 
-                // --- FIM DA CORREÇÃO ---
-
                 job2_title: "Developer",
                 job2_desc: "<li>• Development with **Delphi, C# .NET Core and PL/SQL** for traffic management.</li>",
                 job3_title: "Support Analyst / Developer",
@@ -920,9 +898,9 @@
                     <p class="mt-2"><strong>Technologies:</strong> Oracle (PL/SQL), ERP Systems, Automation Tools.</p>
                 `,
                 job7_title: "Support Technician / Developer",
-                job7_desc: "<li>• Helpdesk, system maintenance, and development.</li><li>• Linguagens-chave: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li><li>• Bancos: Oracle, Access. Ferramentas: Toad, **Crystal Reports**.</li>",
+                job7_desc: "<li>• Helpdesk, system maintenance, and development.</li><li>• Key languages: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li><li>• Databases: Oracle, Access. Tools: Toad, **Crystal Reports**.</li>",
                 job8_title: "IT Instructor",
-				job8_desc: "<li>• Worked as an Instructor in the 'Educar para Crescer' Project, teaching IT classes at state schools on weekends (Saturdays and Sundays).</li>",
+                job8_desc: "<li>• Worked as an Instructor in the 'Educar para Crescer' Project, teaching IT classes at state schools on weekends (Saturdays and Sundays).</li>",
                 job9_title: "Operational Support Technician II",
                 job9_desc: "<li>• Helpdesk attendance and technical support.</li>",
                 job10_title: "Support Tech / Web Designer",
@@ -954,10 +932,12 @@
                 ph_message: "Your Message",
                 form_btn: "Send",
                 form_success: "Message sent successfully! I will contact you soon.",
-                footer_rights: "All rights reserved."
+                footer_rights: "All rights reserved.",
+                github_title: "Want to see my code structure and personal projects?",
+                github_btn: "Access my GitHub Profile",
+                btn_early_career: "View Career Start (2001-2014)"
             },
             pt: {
-			    btn_early_career: "Ver Início de Carreira (2001-2014)",
                 loading: "Carregando...",
                 nav_about: "Sobre Mim",
                 nav_skills: "Habilidades",
@@ -990,8 +970,6 @@
                 section_exp: "Experiência Profissional",
                 job1_title: "Desenvolvedor de Sistemas",
                 job1_date: "Atual (desde 2022)",
-                
-                // --- VERSÃO PT ATUALIZADA (Para manter consistência) ---
                 job1_desc: `
                     <p>Desenvolvimento de sistemas inteligentes para monitoramento e gestão de tráfego urbano, atendendo órgãos de trânsito em Salvador, Camaçari e Maceió.</p>
                     <p><strong>Principais contribuições:</strong></p>
@@ -1004,8 +982,6 @@
                     </ul>
                     <p class="mt-2"><strong>Tecnologias:</strong> .NET Core, C#, Node.js, JavaScript, SQL Server, Oracle, PL/SQL, Delphi, Google Maps APIs.</p>
                 `,
-                // --- FIM DA VERSÃO PT ---
-
                 job2_title: "Desenvolvedor",
                 job2_desc: "<li>• Desenvolvimento com **Delphi, C# .NET Core e PL/SQL** para gestão de trânsito.</li>",
                 job3_title: "Analista de Suporte / Desenvolvedor",
@@ -1038,7 +1014,7 @@
                 job7_title: "Técnico de Suporte / Desenvolvedor",
                 job7_desc: "<li>• Helpdesk, manutenção de sistemas e desenvolvimento.</li><li>• Linguagens-chave: ASP, JavaScript, HTML, PHP, Groovy/Grails, **PL/SQL**.</li><li>• Bancos: Oracle, Access. Ferramentas: Toad, **Crystal Reports**.</li>",
                 job8_title: "Instrutor de Informática",
-				job8_desc: "<li>• Atuação como Instrutor no Projeto 'Educar para Crescer', ministrando aulas de informática em escolas estaduais aos sábados e domingos.</li>",
+                job8_desc: "<li>• Atuação como Instrutor no Projeto 'Educar para Crescer', ministrando aulas de informática em escolas estaduais aos sábados e domingos.</li>",
                 job9_title: "Técnico de Suporte Operacional II",
                 job9_desc: "<li>• Atendimento de Helpdesk e suporte técnico.</li>",
                 job10_title: "Técnico de Suporte / Web Designer",
@@ -1070,7 +1046,10 @@
                 ph_message: "Sua Mensagem",
                 form_btn: "Enviar",
                 form_success: "Mensagem enviada com sucesso! Entrarei em contato em breve.",
-                footer_rights: "Todos os direitos reservados."
+                footer_rights: "Todos os direitos reservados.",
+                github_title: "Quer ver minha estrutura de código e projetos pessoais?",
+                github_btn: "Acessar meu Perfil no GitHub",
+                btn_early_career: "Ver Início de Carreira (2001-2014)"
             }
         };
 
@@ -1084,8 +1063,41 @@
             updateButton();
         }
 
+        // Função para atualizar o arquivo do currículo (PDF)
+        function updateResumeFile() {
+            // Seleciona o iframe (visualizador) e o botão de baixar
+            const resumeIframe = document.querySelector('#resumeModal iframe');
+            const downloadBtn = document.querySelector('.modal-footer .btn-download');
+            
+            // Botão extra para mobile (se houver)
+            const mobileBtn = document.querySelector('#resumeModal a.btn-primary'); 
+
+            // Defina os caminhos dos arquivos aqui
+            const filePT = 'assets/curriculomarcosedington.pdf'; // Seu currículo original
+            const fileEN = 'assets/curriculomarcosedington_en.pdf'; // O novo currículo europeu
+
+            // Define qual usar
+            const targetFile = (currentLang === 'en') ? fileEN : filePT;
+            const fileName = (currentLang === 'en') ? 'Resume_Marcos_Edington.pdf' : 'Curriculo_Marcos_Edington.pdf';
+
+            // Atualiza o iframe
+            if(resumeIframe) resumeIframe.src = targetFile;
+            
+            // Atualiza botão download rodapé
+            if(downloadBtn) {
+                downloadBtn.href = targetFile;
+                downloadBtn.setAttribute('download', fileName);
+            }
+            
+            // Atualiza botão mobile
+            if(mobileBtn) mobileBtn.href = targetFile;
+        }
+
         // Update Content based on currentLang
         function updateContent() {
+            // Primeiro atualiza o PDF
+            updateResumeFile();
+
             // Update innerHTML
             document.querySelectorAll('[data-i18n]').forEach(element => {
                 const key = element.getAttribute('data-i18n');
