@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcos Edington | Showcase Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&family=Fira+Code:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<script src="js/scripts.js" charset="UTF-8"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Sobrescrita para garantir a borda gold e sombras potentes conforme solicitado */
+        .project-card {
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+        }
+        .project-card:hover {
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8) !important;
+        }
+        .modal-content-wrapper {
+            border: 4px solid var(--gold) !important;
+            box-shadow: 0 0 60px rgba(197, 164, 103, 0.6) !important;
+        }
+        body { user-select: none; }
+    </style>
+</head>
+<!-- <div id="aiChatContainer" class="ai-chat-container"> -->
+    <!-- <div class="ai-chat-header"> -->
+        <!-- <div class="d-flex align-items-center gap-2"> -->
+            <!-- <i class="fas fa-robot text-gold"></i> -->
+            <!-- <span style="font-weight: 600; font-size: 0.9rem;">MARCOS EDINGTON AI</span> -->
+        <!-- </div> -->
+        <!-- <button onclick="toggleAIChat()" class="btn-close-chat"><i class="fas fa-times"></i></button> -->
+    <!-- </div> -->
+    <!-- <div id="aiChatBody" class="ai-chat-body"> -->
+        <!-- <div class="ai-message bot"> -->
+            <!-- <p data-en="Hello! I am Marcos' technical assistant. How can I help you explore this architecture today?"  -->
+               <!-- data-pt="Olá! Sou o assistente técnico do Marcos. Como posso te ajudar a explorar esta arquitetura hoje?"> -->
+               <!-- Olá! Sou o assistente técnico do Marcos. Como posso te ajudar a explorar esta arquitetura hoje? -->
+            <!-- </p> -->
+        <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div class="ai-chat-input-area"> -->
+        <!-- <input type="text" id="aiUserInput" placeholder="Type your question..." onkeypress="handleChatKey(event)"> -->
+        <!-- <button onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button> -->
+    <!-- </div> -->
+<!-- </div> -->
+<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+    <div class="lang-switcher">
+        <button class="btn-lang" onclick="toggleLanguage()" id="langBtn">Português</button>
+    </div>
+
+    <div id="demoModal">
+        <div class="modal-content-wrapper">
+            <div class="close-modal" onclick="closeDemo()"><i class="fas fa-times"></i></div>
+            <div id="skeleton" class="skeleton-container">
+                <i class="fas fa-microchip fa-spin fa-3x mb-4" style="color: var(--gold); opacity: 0.7;"></i>
+                <div class="skeleton-box" style="width: 50%"></div>
+                <div class="skeleton-box" style="width: 70%"></div>
+                <p class="mt-3 small" style="color: var(--gold); letter-spacing: 2px; font-weight: 600;" data-en="SYNCING LIVE INSTANCE..." data-pt="SINCRONIZANDO INSTÂNCIA AO VIVO...">SYNCING LIVE INSTANCE...</p>
+            </div>
+            <iframe id="demoIframe" src=""></iframe>
+            <div id="modalFooter" class="modal-footer-custom" style="display: none;">
+                <a id="downloadBtn" href="" download class="btn btn-dark btn-sm"><i class="fas fa-download me-2"></i>Download PDF</a>
+            </div>
+        </div>
+    </div>
+
+    <svg class="db-flow-svg">
+        <path class="flow-line" d="M 50% 200 C 50% 300, 20% 300, 20% 450" />
+        <path class="flow-line" d="M 50% 200 C 50% 350, 50% 350, 50% 450" />
+        <path class="flow-line" d="M 50% 200 C 50% 300, 80% 300, 80% 450" />
+    </svg>
+    
+    <div class="container">
+        <div class="core-container">
+            <img src="eu.jpg" alt="Marcos Edington" class="profile-img">
+            <h1 class="core-title">MARCOS EDINGTON | SHOWCASE HUB</h1>
+            <p class="core-subtitle" data-en="Software Architect & Fullstack Developer" data-pt="Arquiteto de Software & Desenvolvedor Fullstack">Software Architect & Fullstack Developer</p>
+            
+            <div class="description-case">
+                <p class="core-description" 
+                   data-en="This Showcase is a high-availability technical ecosystem. Each project listed represents a full cycle of engineering, with source code hosted on GitHub, containerization via Docker, and automated deployments. Here, you can explore live demos and inspect the architectural integrity of my fullstack solutions in real-time."
+                   data-pt="Este Showcase é um ecossistema técnico de alta disponibilidade. Cada projeto listado representa um ciclo completo de engenharia, com códigos-fonte hospedados no GitHub, conteinerização via Docker e deploys automatizados. Aqui, você pode explorar demos ao vivo e inspecionar a integridade arquitetural das minhas soluções fullstack em tempo real.">
+                   This Showcase is a high-availability technical ecosystem. Each project listed represents a full cycle of engineering, with source code hosted on GitHub, containerization via Docker, and automated deployments. Here, you can explore live demos and inspect the architectural integrity of my fullstack solutions in real-time.
+                </p>
+            </div>
+
+             <div class="d-flex justify-content-center gap-3">
+                <a href="http://marcos.edington.com.br/" target="_blank" class="btn-premium btn-portfolio" style="width: auto; padding: 12px 30px;">
+                    <i class="fas fa-briefcase"></i> <span>Portfólio</span>
+                </a>
+                <button onclick="openResume()" class="btn-premium" style="width: auto; padding: 12px 30px;">
+                    <i class="fas fa-file-pdf"></i> <span data-en="Resume" data-pt="Currículo">Resume</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="project-grid">
+            
+            <div class="project-card-wrapper" id="card1">
+				<div class="project-card-inner">
+					<div class="project-card-front project-card">
+						<div class="info-toggle" onclick="flipCard('card1')"><i class="fas fa-circle-info fa-lg"></i></div>
+						<div class="card-header">
+							<div class="card-icon"><i class="fas fa-users-gear"></i></div>
+							<div>
+								<h3 class="mb-0" data-en="MarketPRO" data-pt="MarketPRO">MarketPRO</h3>
+								<div style="font-size: 0.95rem; font-weight: 400; color: var(--white); opacity: 0.9; letter-spacing: 0.5px; margin-top: 2px;" 
+									 data-en="Client Management" 
+									 data-pt="Gestão de Clientes">
+									 Client Management
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="status-badge"><div class="status-dot"></div> OPERATIONAL</div>
+							<p data-en="Scalable CRM ecosystem built with .NET 8, React, and optimized JSON persistence." 
+							   data-pt="Ecossistema CRM escalável construído com .NET 8, React e persistência JSON otimizada.">
+							   Scalable CRM ecosystem built with .NET 8, React, and optimized JSON persistence.
+							</p>
+							<div class="btn-group-custom">
+								<div class="btn-row">
+									<button onclick="openCustomWindow('https://github.com/MarcosEdington/api-gestao-clientes')" class="btn-premium"><i class="fab fa-github"></i> API</button>
+									<button onclick="openCustomWindow('https://github.com/MarcosEdington/gestao-clientes-front')" class="btn-premium"><i class="fab fa-github"></i> FRONT</button>
+								</div>
+								<button onclick="openDemo('https://gestao-clientes.netlify.app/')" class="btn-premium"><i class="fas fa-desktop"></i> <span data-en="LIVE DEMO" data-pt="DEMO AO VIVO">LIVE DEMO</span></button>
+							</div>
+							<div class="credentials-box">Access: admin@mercado.com | Pass: 123</div>
+						</div>
+					</div>
+					<div class="project-card-back">
+						<div class="info-toggle" onclick="flipCard('card1')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
+						<div class="tech-stack-list">React 18 + .NET 8 WebAPI + JSON Storage + Hexagonal Principles</div>
+						<div class="challenge-box">
+							<h4 data-en="Technical Challenge" data-pt="Desafio Técnico">Technical Challenge</h4>
+							<p data-en="Engineering a fully decoupled fullstack architecture without traditional DB engines. Focused on implementing a robust repository pattern for JSON Flat-File persistence, ensuring data thread-safety and optimized state management between the .NET middleware and the React consumer." 
+							   data-pt="Engenharia de uma arquitetura fullstack totalmente desacoplada sem motores de DB tradicionais. Foco na implementação de um padrão de repositório robusto para persistência em arquivos JSON (Flat-File), garantindo thread-safety dos dados e gerenciamento de estado otimizado entre o middleware .NET e o consumidor React.">
+							   Engineering a fully decoupled fullstack architecture without traditional DB engines. Focused on implementing a robust repository pattern for JSON Flat-File persistence, ensuring data thread-safety and optimized state management between the .NET middleware and the React consumer.
+							</p>
+						</div>
+						<button class="btn-premium mt-auto" onclick="flipCard('card1')">BACK</button>
+					</div>
+				</div>
+			</div>
+
+            <div class="project-card-wrapper" id="card2">
+				<div class="project-card-inner">
+					<div class="project-card-front project-card">
+						<div class="info-toggle" onclick="flipCard('card2')"><i class="fas fa-circle-info fa-lg"></i></div>
+						<div class="card-header">
+							<div class="card-icon"><i class="fas fa-house-laptop"></i></div>
+							<div>
+								<h3 class="mb-0" data-en="FinanceCore" data-pt="FinanceCore">FinanceCore</h3>
+								<div style="font-size: 0.95rem; font-weight: 400; color: var(--white); opacity: 0.9; letter-spacing: 0.5px; margin-top: 2px;" 
+									 data-en="Wealth Management" 
+									 data-pt="Gestão Patrimonial">
+									 Wealth Management
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="status-badge"><div class="status-dot"></div> OPERATIONAL</div>
+							<p data-en="Full residential expense management with business rule validation and real-time dashboard." 
+							   data-pt="Gestão completa de gastos residenciais com validação de regras de negócio e dashboard em tempo real.">
+							   Full residential expense management with business rule validation and real-time dashboard.
+							</p>
+							<div class="btn-group-custom">
+								<div class="btn-row">
+									<button onclick="openCustomWindow('https://github.com/MarcosEdington/controle-gastos-familiar-api')" class="btn-premium"><i class="fab fa-github"></i> API</button>
+									<button onclick="openCustomWindow('https://github.com/MarcosEdington/controle-gastos-familiar-front')" class="btn-premium"><i class="fab fa-github"></i> FRONT</button>
+								</div>
+								<button onclick="openDemo('https://controle-gastos-familiar.netlify.app/')" class="btn-premium"><i class="fas fa-desktop"></i> <span data-en="LIVE DEMO" data-pt="DEMO AO VIVO">LIVE DEMO</span></button>
+							</div>
+							<div class="credentials-box">Access: admin@financeiro.com | Pass: 123 </div>
+						</div>
+					</div>
+					<div class="project-card-back">
+						<div class="info-toggle" onclick="flipCard('card2')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
+						<div class="tech-stack-list">React 18 (TS) + .NET 8 WebAPI + JSON Persistence + Bootstrap 5</div>
+						<div class="challenge-box">
+							<h4 data-en="Technical Challenge" data-pt="Desafio Técnico">Technical Challenge</h4>
+							<p data-en="Development of a custom persistence layer using JSON serialization, ensuring ACID-like data integrity and cascading deletes without a relational database engine. Implemented complex business predicates to gate financial transactions based on user age profiles." 
+							   data-pt="Desenvolvimento de uma camada de persistência customizada via serialização JSON, garantindo integridade referencial e deleção em cascata sem um motor SQL. Implementação de predicados de negócio complexos para restringir transações financeiras com base no perfil etário.">
+							   Development of a custom persistence layer using JSON serialization, ensuring ACID-like data integrity and cascading deletes without a relational database engine. Implemented complex business predicates to gate financial transactions based on user age profiles.
+							</p>
+						</div>
+						<button class="btn-premium mt-auto" onclick="flipCard('card2')">BACK</button>
+					</div>
+				</div>
+			</div>
+
+        <div class="project-card-wrapper" id="card3">
+				<div class="project-card-inner">
+					<div class="project-card-front project-card">
+						<div class="info-toggle" onclick="flipCard('card3')"><i class="fas fa-circle-info fa-lg"></i></div>
+						<div class="card-header">
+							<div class="card-icon"><i class="fas fa-tv"></i></div>
+							<div>
+								<h3 class="mb-0" data-en="SmartKiosk Indoor" data-pt="SmartKiosk Indoor">SmartKiosk Indoor</h3>
+								<div style="font-size: 0.95rem; font-weight: 400; color: var(--white); opacity: 0.9; letter-spacing: 0.5px; margin-top: 2px;" 
+									 data-en="Digital Signage & API Aggregator" 
+									 data-pt="Sinalização Digital & Agregador de APIs">
+									 Digital Signage & API Aggregator
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="status-badge"><div class="status-dot"></div> PRODUCTION</div>
+							<p data-en="Professional indoor media player with real-time API integration for weather, finance, and dynamic ads." 
+							   data-pt="Player profissional de mídia indoor com integração em tempo real de APIs de clima, finanças e anúncios dinâmicos.">
+							   Professional indoor media player with real-time API integration for weather, finance, and dynamic ads.
+							</p>
+							
+							<div class="btn-group-custom">
+								<button onclick="openDemo('https://smart-kiosk-front.netlify.app/')" class="btn-premium">
+									<i class="fas fa-desktop"></i> <span data-en="LIVE DEMO" data-pt="DEMO AO VIVO">LIVE DEMO</span>
+								</button>
+							</div>
+
+							<div class="credentials-box">Access: admin@smartkiosk.com | Pass: 123</div>
+
+							<div style="background: rgba(197, 164, 103, 0.1); border: 1px solid rgba(197, 164, 103, 0.3); border-radius: 8px; padding: 10px; margin-top: 15px;">
+								<p style="font-size: 0.75rem; color: var(--gold); margin: 0; line-height: 1.3; font-weight: 500;" 
+								   data-en="PROPRIETARY SOLUTION: This is a commercial product. Source code is private to protect intellectual property." 
+								   data-pt="SOLUÇÃO PROPRIETÁRIA: Este é um sistema comercializado. O código-fonte é privado para proteção de propriedade intelectual.">
+								   SOLUÇÃO PROPRIETÁRIA: Este é um sistema comercializado. O código-fonte é privado para proteção de propriedade intelectual.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="project-card-back">
+						<div class="info-toggle" onclick="flipCard('card3')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
+						<div class="tech-stack-list">JavaScript (ES6+) + .NET 8 + CSS Animation + API Aggregator</div>
+						<div class="challenge-box">
+							<h4 data-en="Technical Challenge" data-pt="Desafio Técnico">Technical Challenge</h4>
+							<p data-en="Orchestrating a seamless loop of heavy assets (4K videos) and external iframes without memory leaks. Developed a custom sequencer that manages media lifecycle events and real-time data fetching from multiple public APIs." 
+							   data-pt="Orquestração de um loop contínuo de assets pesados (vídeos 4K) e iframes externos sem vazamento de memória. Desenvolvimento de um sequenciador customizado que gerencia eventos de ciclo de vida de mídia e consumo de dados em tempo real.">
+							   Orchestrating a seamless loop of heavy assets (4K videos) and external iframes without memory leaks. Desenvolvimento de um sequenciador customizado que gerencia eventos de ciclo de vida de mídia e consumo de dados em tempo real.
+							</p>
+						</div>
+						<button class="btn-premium mt-auto" onclick="flipCard('card3')">BACK</button>
+					</div>
+				</div>
+			</div>
+
+            <div class="project-card">
+                <div class="card-header"><div class="card-icon"><i class="fas fa-shield-halved"></i></div><h3 data-en="Auth Shield Pro" data-pt="Escudo de Autenticação">Auth Shield Pro</h3></div>
+                <div class="card-body">
+                    <p data-en="Multi-factor authentication library..." data-pt="Biblioteca de autenticação multifator...">Multi-factor authentication library for high-security environments.</p>
+                    <button class="btn-premium mt-auto">DOCUMENTATION</button>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="card-header"><div class="card-icon"><i class="fas fa-server"></i></div><h3 data-en="Cloud Monitor" data-pt="Monitor de Nuvem">Cloud Monitor</h3></div>
+                <div class="card-body">
+                    <p data-en="Microservices health dashboard with automated incident alerts." data-pt="Dashboard de saúde de microserviços com alertas de incidentes automáticos.">Microservices health dashboard with automated incident alerts.</p>
+                    <button class="btn-premium mt-auto">STATUS PAGE</button>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header"><div class="card-icon"><i class="fas fa-mobile-screen"></i></div><h3 data-en="Smart Logistics App" data-pt="App de Logística Inteligente">Smart Logistics App</h3></div>
+                <div class="card-body">
+                    <p data-en="Cross-platform mobile solution for real-time fleet tracking." data-pt="Solução móvel multiplataforma para rastreamento de frota em tempo real.">Cross-platform mobile solution for real-time fleet tracking.</p>
+                    <button class="btn-premium mt-auto">PLAY STORE</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <!-- <!-- <div class="ai-widget"> --> --> -->
+        <!-- <!-- <!-- <div class="ai-bubble" onclick="toggleAIChat()"><i class="fas fa-robot"></i></div> --> --> -->
+    <!-- <!-- <!-- </div> --> --> -->
+
+    <footer>
+        <a href="https://www.linkedin.com/in/marcosedington" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/marcosedington" target="_blank"><i class="fab fa-github"></i></a>
+        <p class="text-white-50 small mt-4">© 2026 Marcos Edington | Software Engineering Excellence</p>
+    </footer>
+
+	<script src="js/scripts.js"></script>
+</body>
+</html>
