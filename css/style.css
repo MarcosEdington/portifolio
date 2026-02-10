@@ -595,3 +595,71 @@ footer a:hover {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Estilo EXCLUSIVO para o infográfico de Arquitetura */
+.modal-architecture {
+    width: 1000px !important;  /* Largura fixa maior que a imagem */
+    height: 850px !important; /* Altura fixa maior que a imagem */
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+    background: #1a1d23 !important; /* Fundo escuro combinando com a imagem */
+}
+
+/* Garante que o iframe da arquitetura não tenha scroll */
+.modal-architecture iframe {
+    overflow: hidden !important;
+}
+
+
+/* Estilo para o rótulo INFO piscante */
+.info-label-flash {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--gold);
+    padding: 2px 8px;
+    border-radius: 4px;
+    animation: flash-gold 1.5s infinite;
+    transition: 0.3s;
+}
+
+.info-label-flash:hover {
+    background: var(--gold);
+    color: var(--navy);
+    box-shadow: 0 0 15px var(--gold);
+}
+
+@keyframes flash-gold {
+    0% { opacity: 1; box-shadow: 0 0 5px var(--gold); }
+    50% { opacity: 0.4; box-shadow: 0 0 0px var(--gold); }
+    100% { opacity: 1; box-shadow: 0 0 5px var(--gold); }
+}
+
+
+
+.db-flow-svg {
+    position: absolute;
+    top: 150px; /* Começa na altura da sua foto */
+    left: 0;
+    width: 100%;
+    height: 600px; /* Altura suficiente para chegar nos cards */
+    pointer-events: none;
+    z-index: 1; /* Fica atrás dos cards mas visível */
+}
+
+.flow-line {
+    stroke: var(--gold);
+    stroke-width: 0.1; /* Estava 0.8, agora está bem mais fino */
+    fill: none;
+    opacity: 0.3;      /* Aumentei levemente a opacidade para compensar a finura */
+    stroke-dasharray: 1; /* Diminuí o tracejado para ficar mais pontilhado */
+}
