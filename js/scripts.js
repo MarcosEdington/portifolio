@@ -1,10 +1,27 @@
-// --- PROTEÇÃO ANTI-CÓPIA ---
-document.onkeydown = function(e) {
-    if(e.keyCode == 123) return false;
-    if(e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'J'.charCodeAt(0))) return false;
-    if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) return false;
-};
-document.addEventListener('contextmenu', event => event.preventDefault());
+// --- PROTEÇÃO AVANÇADA ANTI-CÓPIA & INSPEÇÃO (V2026) ---
+(function() {
+    // Bloqueia clique direito
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    
+    document.onkeydown = function(e) {
+        // Bloqueia: F12 (123), Ctrl+Shift+I (73), Ctrl+Shift+J (74), 
+        // Ctrl+Shift+C (67), Ctrl+U (85), Ctrl+S (83)
+        if (e.keyCode == 123 || 
+           (e.ctrlKey && e.shiftKey && [73, 74, 67].includes(e.keyCode)) ||
+           (e.ctrlKey && [85, 83].includes(e.keyCode))) {
+            return false;
+        }
+    };
+
+    // Monitor de Console Aberto (Limpa logs se tentarem inspecionar)
+    let threshold = 160;
+    setInterval(() => {
+        if (window.outerWidth - window.innerWidth > threshold || 
+            window.outerHeight - window.innerHeight > threshold) {
+            console.clear();
+        }
+    }, 1000);
+})();
 
 // --- LÓGICA DE INTERFACE E TRADUÇÃO ---
 let currentLang = 'en'; 
@@ -22,7 +39,6 @@ function toggleLanguage() {
 function updateUI() {
     const langBtn = document.getElementById('langBtn');
     if(langBtn) {
-        // Blindagem final de acentos para o botão
         langBtn.textContent = (currentLang === 'en') ? "Portugu\u00EAs" : "Ingl\u00EAs";
     }
     document.querySelectorAll('[data-en]').forEach(el => {
@@ -48,11 +64,37 @@ function openDemo(url) {
     const iframe = document.getElementById('demoIframe');
     const skeleton = document.getElementById('skeleton');
     if(!modal) return;
+    
     skeleton.style.display = 'flex';
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
     iframe.src = url;
-    iframe.onload = () => { setTimeout(() => { skeleton.style.display = 'none'; }, 1500); };
+    iframe.style.opacity = '1';
+    
+    iframe.onload = () => { 
+        setTimeout(() => { skeleton.style.display = 'none'; }, 1500); 
+    };
+}
+
+function openArchitecture() {
+    const imgUrl = 'arquitetura-cloud.jpg'; 
+    const modal = document.getElementById('demoModal');
+    const wrapper = modal.querySelector('.modal-content-wrapper');
+    const iframe = document.getElementById('demoIframe');
+    const skeleton = document.getElementById('skeleton');
+
+    // Adiciona classe para tamanho fixo e remove scroll
+    wrapper.classList.add('modal-architecture');
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    iframe.src = imgUrl;
+    iframe.style.opacity = '0';
+
+    setTimeout(() => {
+        if(skeleton) skeleton.style.display = 'none';
+        iframe.style.opacity = '1';
+    }, 600);
 }
 
 function openResume() {
@@ -61,10 +103,20 @@ function openResume() {
 
 function closeDemo() {
     const modal = document.getElementById('demoModal');
-    if(modal) modal.style.display = 'none';
+    const wrapper = modal.querySelector('.modal-content-wrapper');
     const iframe = document.getElementById('demoIframe');
+    
+    if(modal) modal.style.display = 'none';
     if(iframe) iframe.src = "";
     document.body.style.overflow = 'auto';
+    
+    // Reset de classes específicas para não afetar outros projetos
+    wrapper.classList.remove('modal-architecture');
+}
+
+// Fecha o modal ao clicar fora da área de conteúdo
+window.onclick = function(e) { 
+    if (e.target == document.getElementById('demoModal')) closeDemo(); 
 }
 
 /**
