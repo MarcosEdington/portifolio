@@ -1,4 +1,4 @@
-// --- PROTEÇÃO AVANÇADA ANTI-CÓPIA & INSPEÇÃO (V2026) ---
+
 (function() {
     // Bloqueia clique direito
     document.addEventListener('contextmenu', e => e.preventDefault());
@@ -23,7 +23,7 @@
     }, 1000);
 })();
 
-// --- LÓGICA DE INTERFACE E TRADUÇÃO ---
+
 let currentLang = 'en'; 
 const resumeFiles = { 
     en: 'assets/curriculomarcosedington.pdf', 
@@ -113,19 +113,16 @@ function closeDemo() {
     if(iframe) iframe.src = "";
     document.body.style.overflow = 'auto';
     
-    // Reset de classes específicas para não afetar outros projetos
+   
     wrapper.classList.remove('modal-architecture');
 }
 
-// Fecha o modal ao clicar fora da área de conteúdo
+
 window.onclick = function(e) { 
     if (e.target == document.getElementById('demoModal')) closeDemo(); 
 }
 
-/**
-     * SYSTEM IGNITION - Forced Data Load
-     * Dispara fetch em rotas de dados reais para garantir o boot completo do .NET e JSON.
-     */
+
     const apisToWake = [
         'https://api-gestao-clientes-2cd2.onrender.com/api/Cliente',
         'https://controle-gastos-familiar-api.onrender.com/api/pessoas'
