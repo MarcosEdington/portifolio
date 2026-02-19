@@ -94,7 +94,7 @@
 			    <button onclick="openArchitecture()" class="btn-premium" style="width: auto; padding: 12px 30px;">
 					<i class="fas fa-sitemap"></i> <span data-en="Cloud Architecture" data-pt="Arquitetura Cloud">Cloud Architecture</span>
 				</button>
-				<a href="http://marcos.edington.com.br/" target="_blank" class="btn-premium btn-portfolio" style="width: auto; padding: 12px 30px;">
+				<a href="http://marcos.edington.com.br/index_Portfolio.html" target="_blank" class="btn-premium btn-portfolio" style="width: auto; padding: 12px 30px;">
 					<i class="fas fa-briefcase"></i> <span>Portfólio</span>
 				</a>
 				<button onclick="openResume()" class="btn-premium" style="width: auto; padding: 12px 30px;">
@@ -115,6 +115,63 @@
 							<i class="fas fa-microchip"></i> <span>INFO</span>
 						</div>
 						<div class="card-header">
+							<div class="card-icon"><i class="fas fa-rocket"></i></div>
+							<div>
+								<h3 class="mb-0" data-en="DevBoost Engine" data-pt="DevBoost Engine">DevBoost Engine</h3>
+								<div style="font-size: 0.95rem; font-weight: 400; color: var(--white); opacity: 0.9; letter-spacing: 0.5px; margin-top: 2px;" 
+									 data-en="Code Generation & Scaffolding" 
+									 data-pt="Geração de Código & Scaffolding">
+									 Geração de Código & Scaffolding
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="status-badge"><div class="status-dot"></div> OPERATIONAL</div>
+							<p data-en="Advanced CRUD generator that automates the creation of Full Stack projects (C#/.NET & React) with instant preview." 
+							   data-pt="Gerador de CRUD avançado que automatiza a criação de projetos Full Stack (C#/.NET & React) com preview instantâneo.">
+							   Advanced CRUD generator that automates the creation of Full Stack projects (C#/.NET & React) with instant preview.
+							</p>
+							
+							<div class="btn-group-custom">
+								<button onclick="openDemo('https://crud-generator-front.vercel.app/')" class="btn-premium">
+									<i class="fas fa-desktop"></i> <span data-en="LIVE DEMO" data-pt="DEMO AO VIVO">LIVE DEMO</span>
+								</button>
+							</div>
+
+							<div class="credentials-box">Access: admin@devboost.com | Pass: 123</div>
+
+							<div style="background: rgba(197, 164, 103, 0.1); border: 1px solid rgba(197, 164, 103, 0.3); border-radius: 8px; padding: 10px; margin-top: 15px;">
+								<p style="font-size: 0.75rem; color: var(--gold); margin: 0; line-height: 1.3; font-weight: 500;" 
+								   data-en="PROPRIETARY SOLUTION: Source code is private to protect intellectual property." 
+								   data-pt="SOLUÇÃO PROPRIETÁRIA: O código-fonte é privado para proteção de propriedade intelectual.">
+								   SOLUÇÃO PROPRIETÁRIA: O código-fonte é privado para proteção de propriedade intelectual.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="project-card-back">
+						<div class="info-toggle" onclick="flipCard('card1')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
+						<div class="tech-stack-list">.NET 8 + React 18 + ZipArchive + Reflection Concepts + Dynamic Scaffolding</div>
+						<div class="challenge-box">
+							<h4 data-en="Technical Challenge" data-pt="Desafio Técnico">Technical Challenge</h4>
+							<p data-en="Developing a meta-programming engine capable of translating metadata into functional code. The core challenge was implementing an in-memory ZIP packager that bundles Models, Controllers, and Views into a ready-to-use Visual Studio solution, including a real-time 'Functional Preview' for rapid architectural testing before export." 
+							   data-pt="Desenvolvimento de um motor de meta-programação capaz de traduzir metadados em código funcional. O desafio central foi implementar um empacotador ZIP em memória que agrupa Models, Controllers e Views em uma solução de Visual Studio pronta para uso, incluindo um 'Preview Funcional' em tempo real para testes arquiteturais rápidos antes da exportação.">
+								Desenvolvimento de um motor de meta-programação capaz de traduzir metadados em código funcional. O desafio central foi implementar um empacotador ZIP em memória que agrupa Models, Controllers e Views em uma solução de Visual Studio pronta para uso, incluindo um 'Preview Funcional' em tempo real para testes arquiteturais rápidos antes da exportação.
+							</p>
+						</div>
+						<button class="btn-premium mt-auto" onclick="flipCard('card1')">BACK</button>
+					</div>
+				</div>
+			</div>
+
+            <div class="project-card-wrapper" id="card2">
+				<div class="project-card-inner">
+					<div class="project-card-front project-card">
+						<div class="info-label-flash" onclick="flipCard('card2')">
+							<i class="fas fa-microchip"></i> <span>INFO</span>
+						</div>
+						<div class="card-header">
 							<div class="card-icon"><i class="fas fa-tv"></i></div>
 							<div>
 								<h3 class="mb-0" data-en="SmartKiosk Indoor" data-pt="SmartKiosk Indoor">SmartKiosk Indoor</h3>
@@ -131,15 +188,12 @@
 							   data-pt="Player profissional de mídia indoor com integração em tempo real de APIs de clima, finanças e anúncios.">
 							   Professional indoor media player with real-time API integration for weather, finance, and ads.
 							</p>
-							
 							<div class="btn-group-custom">
 								<button onclick="openDemo('https://smart-kiosk-front.vercel.app/')" class="btn-premium">
 									<i class="fas fa-desktop"></i> <span data-en="LIVE DEMO" data-pt="DEMO AO VIVO">LIVE DEMO</span>
 								</button>
 							</div>
-
 							<div class="credentials-box">Access: admin@smartkiosk.com | Pass: 123</div>
-
 							<div style="background: rgba(197, 164, 103, 0.1); border: 1px solid rgba(197, 164, 103, 0.3); border-radius: 8px; padding: 10px; margin-top: 15px;">
 								<p style="font-size: 0.75rem; color: var(--gold); margin: 0; line-height: 1.3; font-weight: 500;" 
 								   data-en="PROPRIETARY SOLUTION: Source code is private to protect intellectual property." 
@@ -150,7 +204,7 @@
 						</div>
 					</div>
 					<div class="project-card-back">
-						<div class="info-toggle" onclick="flipCard('card1')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<div class="info-toggle" onclick="flipCard('card2')"><i class="fas fa-rotate-left fa-lg"></i></div>
 						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
 						<div class="tech-stack-list">JavaScript (ES6+) + .NET 8 + CSS Animation + API Aggregator</div>
 						<div class="challenge-box">
@@ -160,17 +214,15 @@
 								Sincronização de um loop contínuo de mídia de alta resolução e iframes externos. O desafio consistiu em criar um sequenciador customizado que gerencia o ciclo de vida da mídia sem vazamentos de memória (memory leaks), integrado a um ecossistema Full Stack (C#/.NET & React) que permite a gestão remota da playlist e consumo de dados em tempo real via APIs públicas, utilizando JSON para persistência ágil de dados.
 							</p>
 						</div>
-						<button class="btn-premium mt-auto" onclick="flipCard('card1')">BACK</button>
+						<button class="btn-premium mt-auto" onclick="flipCard('card2')">BACK</button>
 					</div>
 				</div>
 			</div>
-			
-			
-			
-            <div class="project-card-wrapper" id="card2">
+
+            <div class="project-card-wrapper" id="card3">
 				<div class="project-card-inner">
 					<div class="project-card-front project-card">
-						<div class="info-label-flash" onclick="flipCard('card2')">
+						<div class="info-label-flash" onclick="flipCard('card3')">
 							<i class="fas fa-microchip"></i> <span>INFO</span>
 						</div>
 						<div class="card-header">
@@ -201,7 +253,7 @@
 						</div>
 					</div>
 					<div class="project-card-back">
-						<div class="info-toggle" onclick="flipCard('card2')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<div class="info-toggle" onclick="flipCard('card3')"><i class="fas fa-rotate-left fa-lg"></i></div>
 						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
 						<div class="tech-stack-list">React 18 + .NET 8 WebAPI + JSON Storage + Hexagonal Principles</div>
 						<div class="challenge-box">
@@ -211,15 +263,15 @@
 							   Engineering a fully decoupled fullstack architecture without traditional DB engines. Focused on implementing a robust repository pattern for JSON Flat-File persistence, ensuring data thread-safety and optimized state management between the .NET middleware and the React consumer.
 							</p>
 						</div>
-						<button class="btn-premium mt-auto" onclick="flipCard('card2')">BACK</button>
+						<button class="btn-premium mt-auto" onclick="flipCard('card3')">BACK</button>
 					</div>
 				</div>
 			</div>
 
-            <div class="project-card-wrapper" id="card3">
+            <div class="project-card-wrapper" id="card4">
 				<div class="project-card-inner">
 					<div class="project-card-front project-card">
-						<div class="info-label-flash" onclick="flipCard('card3')">
+						<div class="info-label-flash" onclick="flipCard('card4')">
 							<i class="fas fa-microchip"></i> <span>INFO</span>
 						</div>
 						<div class="card-header">
@@ -250,7 +302,7 @@
 						</div>
 					</div>
 					<div class="project-card-back">
-						<div class="info-toggle" onclick="flipCard('card3')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<div class="info-toggle" onclick="flipCard('card4')"><i class="fas fa-rotate-left fa-lg"></i></div>
 						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
 						<div class="tech-stack-list">React 18 (TS) + .NET 8 WebAPI + JSON Persistence + Bootstrap 5</div>
 						<div class="challenge-box">
@@ -260,12 +312,10 @@
 								Desenvolvimento de uma camada de persistência customizada via serialização JSON, garantindo integridade de dados e deleção em cascata sem um motor SQL. Implementação de um motor de saúde financeira que calcula o status do orçamento familiar e gera alertas estratégicos para identificar onde agir na melhoria da situação financeira.
 							</p>
 						</div>
-						<button class="btn-premium mt-auto" onclick="flipCard('card3')">BACK</button>
+						<button class="btn-premium mt-auto" onclick="flipCard('card4')">BACK</button>
 					</div>
 				</div>
 			</div>
-
-       
 
             <!-- <div class="project-card"> -->
                 <!-- <div class="card-header"><div class="card-icon"><i class="fas fa-shield-halved"></i></div><h3 data-en="Auth Shield Pro" data-pt="Escudo de Autenticação">Auth Shield Pro</h3></div> -->
