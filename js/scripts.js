@@ -1,4 +1,4 @@
-
+// --- PROTEÇÃO AVANÇADA ANTI-CÓPIA & INSPEÇÃO (V2026) ---
 (function() {
     // Bloqueia clique direito
     document.addEventListener('contextmenu', e => e.preventDefault());
@@ -23,12 +23,9 @@
     }, 1000);
 })();
 
-
+// --- LÓGICA DE INTERFACE E TRADUÇÃO ---
 let currentLang = 'en'; 
-const resumeFiles = { 
-    en: 'assets/curriculomarcosedington.pdf', 
-    pt: 'assets/curriculomarcosedington_en.pdf' 
-};
+const resumeFiles = { en: 'assets/curriculoMarcosEn.pdf', pt: 'assets/curriculoMarcosPt.pdf' };
 
 document.addEventListener('DOMContentLoaded', () => {
     updateUI();
@@ -80,24 +77,34 @@ function openDemo(url) {
 }
 
 function openArchitecture() {
-    const imgUrl = 'arquitetura-cloud.jpg'; 
+    const videoUrl = 'videoarquitetura.mp4'; 
     const modal = document.getElementById('demoModal');
     const wrapper = modal.querySelector('.modal-content-wrapper');
     const iframe = document.getElementById('demoIframe');
     const skeleton = document.getElementById('skeleton');
 
-    // Adiciona classe para tamanho fixo e remove scroll
-    wrapper.classList.add('modal-architecture');
+    // Esconde o iframe e o skeleton para dar lugar ao vídeo
+    iframe.style.display = 'none';
+    if(skeleton) skeleton.style.display = 'none';
+
+    // Cria o elemento de vídeo dinamicamente
+    const videoHTML = `
+        <video id="archVideo" controls autoplay style="width: 100%; height: 100%; border-radius: 8px; background: #000;">
+            <source src="${videoUrl}" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+    `;
+
+    // Insere o vídeo antes do iframe
+    wrapper.insertAdjacentHTML('beforeend', videoHTML);
     
+    wrapper.classList.add('modal-architecture');
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden';
-    iframe.src = imgUrl;
-    iframe.style.opacity = '0';
 
-    setTimeout(() => {
-        if(skeleton) skeleton.style.display = 'none';
-        iframe.style.opacity = '1';
-    }, 600);
+    // Garante que o volume comece alto
+    const videoElement = document.getElementById('archVideo');
+    videoElement.volume = 0.7; 
 }
 
 function openResume() {
@@ -108,21 +115,30 @@ function closeDemo() {
     const modal = document.getElementById('demoModal');
     const wrapper = modal.querySelector('.modal-content-wrapper');
     const iframe = document.getElementById('demoIframe');
+    const video = document.getElementById('archVideo');
     
     if(modal) modal.style.display = 'none';
-    if(iframe) iframe.src = "";
-    document.body.style.overflow = 'auto';
+    if(iframe) {
+        iframe.src = "";
+        iframe.style.display = 'block'; // Volta o iframe ao normal para as demos
+    }
     
-   
+    // REMOVE O VÍDEO SE ELE EXISTIR
+    if(video) video.remove();
+    
+    document.body.style.overflow = 'auto';
     wrapper.classList.remove('modal-architecture');
 }
 
-
+// Fecha o modal ao clicar fora da área de conteúdo
 window.onclick = function(e) { 
     if (e.target == document.getElementById('demoModal')) closeDemo(); 
 }
 
-
+/**
+     * SYSTEM IGNITION - Forced Data Load
+     * Dispara fetch em rotas de dados reais para garantir o boot completo do .NET e JSON.
+     */
     const apisToWake = [
         'https://api-gestao-clientes-2cd2.onrender.com/api/Cliente',
         'https://controle-gastos-familiar-api.onrender.com/api/pessoas'
