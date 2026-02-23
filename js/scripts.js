@@ -25,7 +25,7 @@
 
 // --- LÓGICA DE INTERFACE E TRADUÇÃO ---
 let currentLang = 'en'; 
-const resumeFiles = { en: 'assets/curriculomarcosedington.pdf', pt: 'assets/curriculomarcosedington_en.pdf' };
+const resumeFiles = { en: 'assets/curriculomarcosedington_en.pdf', pt: 'assets/curriculomarcosedington.pdf' };
 
 document.addEventListener('DOMContentLoaded', () => {
     updateUI();
