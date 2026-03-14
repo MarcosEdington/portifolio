@@ -105,7 +105,73 @@
 
         <div class="project-grid">
             
-			<div class="project-card-wrapper" id="card1">
+			<div class="project-card-wrapper" id="card5">
+				<div class="project-card-inner">
+					<div class="project-card-front project-card">
+						<div class="info-label-flash" onclick="flipCard('card5')">
+							<i class="fas fa-microchip"></i> <span>INFO</span>
+						</div>
+						<div class="card-header">
+							<div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+							<div>
+								<h3 class="mb-0" data-en="SGE Beija-Flor" data-pt="SGE Beija-Flor">SGE Beija-Flor</h3>
+								<div style="font-size: 0.95rem; font-weight: 400; color: var(--white); opacity: 0.9; letter-spacing: 0.5px; margin-top: 2px;" 
+									 data-en="Educational Management System" 
+									 data-pt="Sistema de Gestão Educacional">
+									 Sistema de Gestão Educacional
+								</div>
+							</div>
+						</div>
+						<div class="card-body">
+							<div class="status-badge"><div class="status-dot"></div> PRODUCTION</div>
+							<p data-en="Comprehensive school ecosystem with Student Portal, Digital Attendance, Grade Management, and Financial control." 
+							   data-pt="Ecossistema escolar completo com Portal do Aluno, Chamada Digital, Gestão de Notas e Controle Financeiro.">
+							   Ecossistema escolar completo com Portal do Aluno, Chamada Digital, Gestão de Notas e Controle Financeiro.
+							</p>
+							
+							<div class="btn-group-custom">
+								<!-- <div class="btn-row"> -->
+									<!-- <button onclick="openCustomWindow('https://github.com/escolabeijaflorsalvador-rgb/sge-escola-api')" class="btn-premium"> -->
+										<!-- <i class="fab fa-github"></i> API -->
+									<!-- </button> -->
+									<!-- <button onclick="openCustomWindow('https://github.com/escolabeijaflorsalvador-rgb/sge-escola-front')" class="btn-premium"> -->
+										<!-- <i class="fab fa-github"></i> FRONT -->
+									<!-- </button> -->
+								<!-- </div> -->
+								<button onclick="openDemo('https://sge-escola-front-c55t.vercel.app/')" class="btn-premium">
+									<i class="fas fa-desktop"></i> <span data-en="LIVE DEMO" data-pt="DEMO AO VIVO">LIVE DEMO</span>
+								</button>
+							</div>
+
+							<div class="credentials-box">Access: admin@beijaflor.com | Pass: 123</div>
+
+							<div style="background: rgba(197, 164, 103, 0.1); border: 1px solid rgba(197, 164, 103, 0.3); border-radius: 8px; padding: 10px; margin-top: 15px;">
+								<p style="font-size: 0.75rem; color: var(--gold); margin: 0; line-height: 1.3; font-weight: 500;" 
+								   data-en="ENTERPRISE SOLUTION: Scalable architecture for real-time school operations." 
+								   data-pt="SOLUÇÃO ENTERPRISE: Arquitetura escalável para operações escolares em tempo real.">
+								   SOLUÇÃO ENTERPRISE: Arquitetura escalável para operações escolares em tempo real.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="project-card-back">
+						<div class="info-toggle" onclick="flipCard('card5')"><i class="fas fa-rotate-left fa-lg"></i></div>
+						<h5 class="text-gold">ARCHITECT DEEP DIVE</h5>
+						<div class="tech-stack-list">React 18 + .NET 8 WebAPI + Vite + TypeScript + JWT Auth + Axios</div>
+						<div class="challenge-box">
+							<h4 data-en="Technical Challenge" data-pt="Desafio Técnico">Technical Challenge</h4>
+							<p data-en="Implementation of a multi-module administrative dashboard with complex business rules for academic performance and financial health. The core challenge was synchronizing the real-time Digital Attendance module and the automated Report Card generation engine, ensuring data consistency across relational entities without sacrificing SPA performance." 
+							   data-pt="Implementação de um dashboard administrativo multi-módulo com regras de negócio complexas para desempenho acadêmico e saúde financeira. O desafio central foi a sincronização do módulo de Chamada Digital em tempo real e o motor de geração automática de boletins, garantindo consistência de dados entre entidades relacionadas sem sacrificar a performance da SPA.">
+								Implementação de um dashboard administrativo multi-módulo com regras de negócio complexas para desempenho acadêmico e saúde financeira. O desafio central foi a sincronização do módulo de Chamada Digital em tempo real e o motor de geração automática de boletins, garantindo consistência de dados entre entidades relacionadas sem sacrificar a performance da SPA.
+							</p>
+						</div>
+						<button class="btn-premium mt-auto" onclick="flipCard('card5')">BACK</button>
+					</div>
+				</div>
+			</div>
+			
+			
+			 <div class="project-card-wrapper" id="card1">
 				<div class="project-card-inner">
 					<div class="project-card-front project-card">
 						<div class="info-label-flash" onclick="flipCard('card1')">
@@ -161,9 +227,6 @@
 					</div>
 				</div>
 			</div>
-			
-			
-		
 
             <div class="project-card-wrapper" id="card2">
 				<div class="project-card-inner">
@@ -174,7 +237,7 @@
 						<div class="card-header">
 							<div class="card-icon"><i class="fas fa-tv"></i></div>
 							<div>
-								<h3 class="mb-0" data-en="SmartKiosk Indoor" data-pt="SmartKiosk Indoor">SmartKiosk Indoor</h3>
+								<h3 class="mb-0" data-en="SmartKiosk Indoor" data-pt="SmartKiosk Indoor"></h3>
 								<div style="font-size: 0.95rem; font-weight: 400; color: var(--white); opacity: 0.9; letter-spacing: 0.5px; margin-top: 2px;" 
 									 data-en="Digital Signage & API Aggregator" 
 									 data-pt="Sinalização Digital & Agregador de APIs">
